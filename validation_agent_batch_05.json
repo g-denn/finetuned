@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "Baffinland Iron Mines ",
+        "idea_id":  "25b7f08b-09cf-46a1-adfc-decd4a7f6693",
+        "perf_1y":  1,
+        "perf_3y":  1,
+        "perf_5y":  0.000161748635964315,
+        "position_type":  "short",
+        "publication_date":  "2007-05-30",
+        "raw_symbol":  "BIM",
+        "risk_priority":  10,
+        "yahoo_symbol":  "BIM"
+    },
+    {
+        "company_name":  "VCG Holdings Corp. ",
+        "idea_id":  "8c5a2cb4-d60a-4a6a-a9b0-4ceccc0d4abd",
+        "perf_1y":  0.0184172657753924,
+        "perf_3y":  0.0184172657753924,
+        "perf_5y":  0.0184172657753924,
+        "position_type":  "long",
+        "publication_date":  "2007-08-14",
+        "raw_symbol":  "PTT",
+        "risk_priority":  10,
+        "yahoo_symbol":  "PTT"
+    },
+    {
+        "company_name":  "ECC Capital ",
+        "idea_id":  "2528c97d-92f9-4b94-8d63-fa6ead6a82d1",
+        "perf_1y":  1.56862742233534,
+        "perf_3y":  31.3725328638009,
+        "perf_5y":  41.8300438184012,
+        "position_type":  "short",
+        "publication_date":  "2007-08-17",
+        "raw_symbol":  "ECRO",
+        "risk_priority":  10,
+        "yahoo_symbol":  "ECRO"
+    },
+    {
+        "company_name":  "PETROBANK ENERGY RES LTD ",
+        "idea_id":  "58f0e405-92ac-44b5-9c19-3d48aabb3028",
+        "perf_1y":  0.683284457478006,
+        "perf_3y":  0.649560117302053,
+        "perf_5y":  0.0197360704371656,
+        "position_type":  "short",
+        "publication_date":  "2007-08-20",
+        "raw_symbol":  "PBG",
+        "risk_priority":  10,
+        "yahoo_symbol":  "PBG"
+    },
+    {
+        "company_name":  "R.H. Donnelley ",
+        "idea_id":  "afd0f6a8-9539-450d-abb2-790053c66c38",
+        "perf_1y":  0.107526879515148,
+        "perf_3y":  0.166666658121198,
+        "perf_5y":  0.00806451628409116,
+        "position_type":  "short",
+        "publication_date":  "2007-12-05",
+        "raw_symbol":  "RHD",
+        "risk_priority":  10,
+        "yahoo_symbol":  "RHD"
+    }
+]

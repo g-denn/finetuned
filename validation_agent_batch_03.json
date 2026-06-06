@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "TALBOTS INC ",
+        "idea_id":  "34a2f718-0955-4b9c-83cb-ba4ade5ff02e",
+        "perf_1y":  0.369032258064516,
+        "perf_3y":  0.0208516136907762,
+        "perf_5y":  0.0154838709677419,
+        "position_type":  "short",
+        "publication_date":  "2005-10-27",
+        "raw_symbol":  "TLB",
+        "risk_priority":  10,
+        "yahoo_symbol":  "TLB"
+    },
+    {
+        "company_name":  "The Globe.com ",
+        "idea_id":  "69b3cfab-9212-46fc-84ba-7f76880a7eb6",
+        "perf_1y":  0.258064508376087,
+        "perf_3y":  0.0290322565914565,
+        "perf_5y":  0.00645161316004212,
+        "position_type":  "long",
+        "publication_date":  "2005-11-15",
+        "raw_symbol":  "TGLO",
+        "risk_priority":  10,
+        "yahoo_symbol":  "TGLO"
+    },
+    {
+        "company_name":  "Isotechnika ",
+        "idea_id":  "9b5ac28d-f790-4a62-b7d7-6c618091e760",
+        "perf_1y":  15189.1889934387,
+        "perf_3y":  18378.3781415272,
+        "perf_5y":  36486.4860162672,
+        "position_type":  "short",
+        "publication_date":  "2005-11-15",
+        "raw_symbol":  "ISA",
+        "risk_priority":  10,
+        "yahoo_symbol":  "ISA"
+    },
+    {
+        "company_name":  "PW Eagle ",
+        "idea_id":  "4208d2f8-6a49-49d9-9048-78a287996675",
+        "perf_1y":  1,
+        "perf_3y":  0.01,
+        "perf_5y":  0.000333333333333333,
+        "position_type":  "short",
+        "publication_date":  "2005-12-06",
+        "raw_symbol":  "PWEI",
+        "risk_priority":  10,
+        "yahoo_symbol":  "PWEI"
+    },
+    {
+        "company_name":  "Catalina Marketing Corp ",
+        "idea_id":  "2596a93f-6896-4f4e-9647-552220f87caf",
+        "perf_1y":  0.759075899020997,
+        "perf_3y":  0.0429042892604389,
+        "perf_5y":  0.0122112213947865,
+        "position_type":  "short",
+        "publication_date":  "2005-12-29",
+        "raw_symbol":  "POS",
+        "risk_priority":  10,
+        "yahoo_symbol":  "POS"
+    }
+]

@@ -1,0 +1,126 @@
+{
+  "test": {
+    "accuracy": 0.3089820359281437,
+    "by_direction": {
+      "long": {
+        "accuracy": 0.31724137931034485,
+        "correct": 138,
+        "scored": 435
+      },
+      "short": {
+        "accuracy": 0.3,
+        "correct": 120,
+        "scored": 400
+      }
+    },
+    "confusion": {
+      "excellent": {
+        "excellent": 9,
+        "failed": 8,
+        "good": 8,
+        "neutral": 27,
+        "poor": 30
+      },
+      "failed": {
+        "excellent": 10,
+        "failed": 13,
+        "good": 29,
+        "neutral": 44,
+        "poor": 23
+      },
+      "good": {
+        "excellent": 2,
+        "failed": 6,
+        "good": 30,
+        "neutral": 66,
+        "poor": 49
+      },
+      "neutral": {
+        "excellent": 4,
+        "failed": 8,
+        "good": 41,
+        "neutral": 128,
+        "poor": 67
+      },
+      "poor": {
+        "excellent": 3,
+        "failed": 14,
+        "good": 36,
+        "neutral": 102,
+        "poor": 78
+      }
+    },
+    "correct": 258,
+    "labels": [
+      "excellent",
+      "failed",
+      "good",
+      "neutral",
+      "poor"
+    ],
+    "predictions": "C:\\Users\\Dell\\finetuned\\reports\\text_baseline_test_predictions.jsonl",
+    "scored": 835
+  },
+  "val": {
+    "accuracy": 0.3117505995203837,
+    "by_direction": {
+      "long": {
+        "accuracy": 0.327710843373494,
+        "correct": 136,
+        "scored": 415
+      },
+      "short": {
+        "accuracy": 0.29594272076372313,
+        "correct": 124,
+        "scored": 419
+      }
+    },
+    "confusion": {
+      "excellent": {
+        "excellent": 13,
+        "failed": 21,
+        "good": 16,
+        "neutral": 23,
+        "poor": 21
+      },
+      "failed": {
+        "excellent": 4,
+        "failed": 14,
+        "good": 13,
+        "neutral": 32,
+        "poor": 22
+      },
+      "good": {
+        "excellent": 7,
+        "failed": 15,
+        "good": 40,
+        "neutral": 67,
+        "poor": 40
+      },
+      "neutral": {
+        "excellent": 5,
+        "failed": 13,
+        "good": 42,
+        "neutral": 118,
+        "poor": 85
+      },
+      "poor": {
+        "excellent": 2,
+        "failed": 18,
+        "good": 34,
+        "neutral": 94,
+        "poor": 75
+      }
+    },
+    "correct": 260,
+    "labels": [
+      "excellent",
+      "failed",
+      "good",
+      "neutral",
+      "poor"
+    ],
+    "predictions": "C:\\Users\\Dell\\finetuned\\reports\\text_baseline_val_predictions.jsonl",
+    "scored": 834
+  }
+}

@@ -1,0 +1,26 @@
+# Local machine state
+.claude/settings.local.json
+desktop.ini
+.DS_Store
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python runtime artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Logs
+*.log
+
+# Generated market-data caches
+eodhd_output/**/symbol_cache/
+eodhd_output/**/fundamentals_cache/
+eodhd_output/**/eodhd_search_cache/
+eodhd_output/**/raw_cache_sample.json
+
+# Supabase local link/runtime metadata
+supabase/.temp/

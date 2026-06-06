@@ -1,0 +1,36 @@
+{
+  "accuracy": 0.2970059880239521,
+  "by_direction": {
+    "long": {
+      "accuracy": 0.3057471264367816,
+      "correct": 133,
+      "scored": 435
+    },
+    "short": {
+      "accuracy": 0.2875,
+      "correct": 115,
+      "scored": 400
+    }
+  },
+  "confusion": {
+    "excellent": {
+      "neutral": 82
+    },
+    "failed": {
+      "neutral": 119
+    },
+    "good": {
+      "neutral": 153
+    },
+    "neutral": {
+      "neutral": 248
+    },
+    "poor": {
+      "neutral": 233
+    }
+  },
+  "correct": 248,
+  "missing_prediction": 0,
+  "scored": 835,
+  "unknown_id": 0
+}

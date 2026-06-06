@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "EMMIS COMMUNICATIONS CP-CL A ",
+        "idea_id":  "56eb0e52-b78e-4a38-94c6-20d3fb879b14",
+        "perf_1y":  0.41637369542815,
+        "perf_3y":  0.0190858804273706,
+        "perf_5y":  0.0337016528653948,
+        "position_type":  "short",
+        "publication_date":  "2005-12-30",
+        "raw_symbol":  "EMMS",
+        "risk_priority":  10,
+        "yahoo_symbol":  "EMMS"
+    },
+    {
+        "company_name":  "ProQuest Company ",
+        "idea_id":  "ffde6b40-2a4b-44e1-8676-6c74f2b5dc19",
+        "perf_1y":  1,
+        "perf_3y":  23.3333331125754,
+        "perf_5y":  83.3333300219643,
+        "position_type":  "long",
+        "publication_date":  "2006-02-11",
+        "raw_symbol":  "PQE",
+        "risk_priority":  10,
+        "yahoo_symbol":  "PQE"
+    },
+    {
+        "company_name":  "Sunterra Corporation ",
+        "idea_id":  "e506b470-0fcf-424d-8444-cf748e9737e2",
+        "perf_1y":  0.0400000005960464,
+        "perf_3y":  0.160000002384186,
+        "perf_5y":  0.000120000005699694,
+        "position_type":  "short",
+        "publication_date":  "2006-06-26",
+        "raw_symbol":  "SNRR",
+        "risk_priority":  10,
+        "yahoo_symbol":  "SNRR"
+    },
+    {
+        "company_name":  "Ezenia ",
+        "idea_id":  "70de6de3-f8b7-4476-bb4e-e539d5fb5f13",
+        "perf_1y":  0.478947469816485,
+        "perf_3y":  0.0947368690923128,
+        "perf_5y":  0.0131578968923573,
+        "position_type":  "long",
+        "publication_date":  "2006-10-09",
+        "raw_symbol":  "EZEN",
+        "risk_priority":  10,
+        "yahoo_symbol":  "EZEN"
+    },
+    {
+        "company_name":  "AMERICAN INTERNATIONAL GROUP ",
+        "idea_id":  "ece8d778-2eac-4b93-b47e-98b394191623",
+        "perf_1y":  0.686733769624445,
+        "perf_3y":  0.0291975900311227,
+        "perf_5y":  0.0295240105925434,
+        "position_type":  "short",
+        "publication_date":  "2007-04-09",
+        "raw_symbol":  "AIG",
+        "risk_priority":  10,
+        "yahoo_symbol":  "AIG"
+    }
+]

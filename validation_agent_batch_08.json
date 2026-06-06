@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "TONGXIN INTERNATIONAL LTD ",
+        "idea_id":  "36ee8591-a546-4260-808c-bdd3ab8d486d",
+        "perf_1y":  0.260771786217617,
+        "perf_3y":  0.0927534093530306,
+        "perf_5y":  0.00885188616415956,
+        "position_type":  "long",
+        "publication_date":  "2010-07-06",
+        "raw_symbol":  "TXIC",
+        "risk_priority":  10,
+        "yahoo_symbol":  "TXIC"
+    },
+    {
+        "company_name":  "SOUTHERN PACIFIC RESOURCE CP ",
+        "idea_id":  "c7cc9ded-a0ff-4a60-8d59-0db97b80f371",
+        "perf_1y":  16.8714709300057,
+        "perf_3y":  12.2882760710671,
+        "perf_5y":  433.198251244496,
+        "position_type":  "short",
+        "publication_date":  "2010-09-20",
+        "raw_symbol":  "STP.",
+        "risk_priority":  10,
+        "yahoo_symbol":  "STP"
+    },
+    {
+        "company_name":  "Crocodile Gold ",
+        "idea_id":  "3ba1503d-ef82-4cee-ab2e-58ae5520533a",
+        "perf_1y":  0.571428581023889,
+        "perf_3y":  0.658062276643794,
+        "perf_5y":  0.0463183831183512,
+        "position_type":  "long",
+        "publication_date":  "2011-01-12",
+        "raw_symbol":  "CRK",
+        "risk_priority":  10,
+        "yahoo_symbol":  "CRK"
+    },
+    {
+        "company_name":  "BREAKWATER RESOURCES LTD ",
+        "idea_id":  "e705729a-354f-47bc-aa7e-02adaa1173a3",
+        "perf_1y":  0.31428572239519,
+        "perf_3y":  0.428571458981963,
+        "perf_5y":  0.0476190480414161,
+        "position_type":  "short",
+        "publication_date":  "2011-02-14",
+        "raw_symbol":  "BWR.",
+        "risk_priority":  10,
+        "yahoo_symbol":  "BWR"
+    },
+    {
+        "company_name":  "SWISHER HYGIENE INC ",
+        "idea_id":  "f86fe63f-e30b-41d9-97a6-6fa2cfa61822",
+        "perf_1y":  0.202030452980003,
+        "perf_3y":  0.0431370565733934,
+        "perf_5y":  0.0101522842639594,
+        "position_type":  "short",
+        "publication_date":  "2011-04-15",
+        "raw_symbol":  "SWSH",
+        "risk_priority":  10,
+        "yahoo_symbol":  "SWSH"
+    }
+]

@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "Cooper ",
+        "idea_id":  "f40966cd-8cc6-4870-9377-125483fbaae7",
+        "perf_1y":  0.5,
+        "perf_3y":  53.8500001490116,
+        "perf_5y":  74.9583278116255,
+        "position_type":  "short",
+        "publication_date":  "2002-01-07",
+        "raw_symbol":  "CBE",
+        "risk_priority":  10,
+        "yahoo_symbol":  "CBE"
+    },
+    {
+        "company_name":  "Gigamedia ",
+        "idea_id":  "48515ad6-e918-450b-b1e5-6b6f2ed8b7b4",
+        "perf_1y":  1.72942821779856,
+        "perf_3y":  3.32914923679667,
+        "perf_5y":  28.8598333845135,
+        "position_type":  "long",
+        "publication_date":  "2002-02-19",
+        "raw_symbol":  "GIGM",
+        "risk_priority":  10,
+        "yahoo_symbol":  "GIGM"
+    },
+    {
+        "company_name":  "Frontline ",
+        "idea_id":  "d0b9b6e0-1924-4020-a3da-45a24a14cc77",
+        "perf_1y":  3.84226319475555,
+        "perf_3y":  14.242469813282,
+        "perf_5y":  27.9522933230853,
+        "position_type":  "short",
+        "publication_date":  "2002-12-31",
+        "raw_symbol":  "FRO",
+        "risk_priority":  10,
+        "yahoo_symbol":  "FRO"
+    },
+    {
+        "company_name":  "SBA COMMUNICATIONS CORP ",
+        "idea_id":  "18d6ef64-c114-4c79-8824-3b216d2c6a4c",
+        "perf_1y":  6.56923129206823,
+        "perf_3y":  32.6461584594256,
+        "perf_5y":  41.7692280935332,
+        "position_type":  "short",
+        "publication_date":  "2003-03-09",
+        "raw_symbol":  "SBAC",
+        "risk_priority":  10,
+        "yahoo_symbol":  "SBAC"
+    },
+    {
+        "company_name":  "APPLE INC ",
+        "idea_id":  "e0bfeec8-f257-4df8-8200-55e3835c54ca",
+        "perf_1y":  2.05625348693697,
+        "perf_3y":  9.73353227064918,
+        "perf_5y":  23.7157742733882,
+        "position_type":  "short",
+        "publication_date":  "2003-04-22",
+        "raw_symbol":  "AAPL",
+        "risk_priority":  10,
+        "yahoo_symbol":  "AAPL"
+    }
+]

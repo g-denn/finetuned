@@ -1,0 +1,23 @@
+{
+  "SFI": {
+    "status": "known_pre_2022_ticker_change",
+    "old_symbol": "SFI.US",
+    "successor_symbol": "STAR.US",
+    "effective_date": "2013-12-19",
+    "evidence_required": [
+      "exchange_notice_or_occ_memo",
+      "company_ir_release_or_sec_filing"
+    ],
+    "note": "EODHD symbol-change-history starts in 2022, so pre-2022 ticker changes must be supplied from external evidence."
+  },
+  "KSW": {
+    "status": "known_acquisition_or_delisting_review",
+    "old_symbol": "KSW.US",
+    "evidence_required": [
+      "deal_close_date",
+      "cash_or_stock_consideration",
+      "final_trading_date"
+    ],
+    "note": "Do not use post-delisting prices. Model terminal consideration if acquired."
+  }
+}

@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "India Globalization Capital ",
+        "idea_id":  "384962a7-a4da-4ea7-a7d2-8401c0a561ec",
+        "perf_1y":  0.169520536983946,
+        "perf_3y":  0.119863010566842,
+        "perf_5y":  0.0239726017051174,
+        "position_type":  "long",
+        "publication_date":  "2008-02-12",
+        "raw_symbol":  "IGC",
+        "risk_priority":  10,
+        "yahoo_symbol":  "IGC"
+    },
+    {
+        "company_name":  "Interoil Exploration and Produ ",
+        "idea_id":  "ea1448f4-545a-40a9-8485-665d4005d1b4",
+        "perf_1y":  0.354046242774566,
+        "perf_3y":  0.227745664739884,
+        "perf_5y":  0.038728323699422,
+        "position_type":  "short",
+        "publication_date":  "2008-06-26",
+        "raw_symbol":  "IOX.ol",
+        "risk_priority":  10,
+        "yahoo_symbol":  "IOX.OL"
+    },
+    {
+        "company_name":  "Avistar Communications ",
+        "idea_id":  "5465e900-f8df-45dd-811c-a86026863979",
+        "perf_1y":  0.452991445153893,
+        "perf_3y":  0.521367552717763,
+        "perf_5y":  0.00341880370658884,
+        "position_type":  "long",
+        "publication_date":  "2008-10-12",
+        "raw_symbol":  "AVSR",
+        "risk_priority":  10,
+        "yahoo_symbol":  "AVSR"
+    },
+    {
+        "company_name":  "MASTECH DIGITAL INC ",
+        "idea_id":  "a371e726-b58f-413a-a91f-9b621bdee119",
+        "perf_1y":  4.09243666129167,
+        "perf_3y":  3.38655443083353,
+        "perf_5y":  21.3095660445423,
+        "position_type":  "long",
+        "publication_date":  "2008-12-15",
+        "raw_symbol":  "MHH",
+        "risk_priority":  10,
+        "yahoo_symbol":  "MHH"
+    },
+    {
+        "company_name":  "KSW Inc ",
+        "idea_id":  "7487ab74-7b0a-4d2b-8325-569eb69bf4f5",
+        "perf_1y":  1.3333332738031,
+        "perf_3y":  1.14981267622436,
+        "perf_5y":  23.0337072069916,
+        "position_type":  "long",
+        "publication_date":  "2008-12-19",
+        "raw_symbol":  "KSW",
+        "risk_priority":  10,
+        "yahoo_symbol":  "KSW"
+    }
+]

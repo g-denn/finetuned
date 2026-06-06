@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "Sirius Satellite Radio (short) ",
+        "idea_id":  "3eca20c2-8522-4288-a19c-648be3f3af7d",
+        "perf_1y":  2.01013524748058,
+        "perf_3y":  1.20608147292009,
+        "perf_5y":  0.0337837814546708,
+        "position_type":  "short",
+        "publication_date":  "2004-02-13",
+        "raw_symbol":  "SIRI",
+        "risk_priority":  10,
+        "yahoo_symbol":  "SIRI"
+    },
+    {
+        "company_name":  "BEAZER HOMES USA INC ",
+        "idea_id":  "a4f327bf-4379-4a54-9433-c044f0f6dfba",
+        "perf_1y":  1.57713931405583,
+        "perf_3y":  1.10357112533926,
+        "perf_5y":  0.012195025176801,
+        "position_type":  "long",
+        "publication_date":  "2004-02-28",
+        "raw_symbol":  "BZH",
+        "risk_priority":  10,
+        "yahoo_symbol":  "BZH"
+    },
+    {
+        "company_name":  "Endocare ",
+        "idea_id":  "0e87c3b2-9304-48b0-b572-5ab83b2c2198",
+        "perf_1y":  3.84313740156468,
+        "perf_3y":  0.862745132871612,
+        "perf_5y":  0.00196078430656422,
+        "position_type":  "long",
+        "publication_date":  "2004-04-19",
+        "raw_symbol":  "ENDO",
+        "risk_priority":  10,
+        "yahoo_symbol":  "ENDO"
+    },
+    {
+        "company_name":  "Petroleum Geo Services ",
+        "idea_id":  "98e97564-8ac4-4883-b102-354f382a02d6",
+        "perf_1y":  1,
+        "perf_3y":  0.0640776689770152,
+        "perf_5y":  0.0364077669902913,
+        "position_type":  "long",
+        "publication_date":  "2005-01-24",
+        "raw_symbol":  "PGS",
+        "risk_priority":  10,
+        "yahoo_symbol":  "PGS"
+    },
+    {
+        "company_name":  "Paincare Holdings ",
+        "idea_id":  "adf3386a-27f5-49ed-9ad2-f7e808a7b3ec",
+        "perf_1y":  1.12765966081253,
+        "perf_3y":  0.148936173720509,
+        "perf_5y":  0.0425531938503425,
+        "position_type":  "short",
+        "publication_date":  "2005-10-19",
+        "raw_symbol":  "PRZ",
+        "risk_priority":  10,
+        "yahoo_symbol":  "PRZ"
+    }
+]

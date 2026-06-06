@@ -1,0 +1,62 @@
+﻿[
+    {
+        "company_name":  "ISTAR FINANCIAL INC ",
+        "idea_id":  "444feef1-1742-48f4-aed2-a940362392c1",
+        "perf_1y":  1,
+        "perf_3y":  0.188976373564355,
+        "perf_5y":  126668.89513314,
+        "position_type":  "short",
+        "publication_date":  "2009-02-26",
+        "raw_symbol":  "SFI",
+        "risk_priority":  10,
+        "yahoo_symbol":  "SFI"
+    },
+    {
+        "company_name":  "SUNTECH POWER HOLDINGS  -ADR ",
+        "idea_id":  "5d84cb4c-a940-4421-af6e-66ab099bac17",
+        "perf_1y":  0.928260869565217,
+        "perf_3y":  0.0257173911384914,
+        "perf_5y":  0.000510869563921638,
+        "position_type":  "short",
+        "publication_date":  "2009-05-27",
+        "raw_symbol":  "STP",
+        "risk_priority":  10,
+        "yahoo_symbol":  "STP"
+    },
+    {
+        "company_name":  "Transgaming ",
+        "idea_id":  "44884cbd-122f-42d6-ae01-bd42db2a6293",
+        "perf_1y":  0.931034471958844,
+        "perf_3y":  0.0977011438454027,
+        "perf_5y":  378.522158003629,
+        "position_type":  "short",
+        "publication_date":  "2010-01-04",
+        "raw_symbol":  "TNG",
+        "risk_priority":  10,
+        "yahoo_symbol":  "TNG"
+    },
+    {
+        "company_name":  "BioExx ",
+        "idea_id":  "46c5064e-afa7-4e99-bef1-6705266848fb",
+        "perf_1y":  0.854460072613564,
+        "perf_3y":  0.0399061015620558,
+        "perf_5y":  0.00469483532356869,
+        "position_type":  "short",
+        "publication_date":  "2010-03-31",
+        "raw_symbol":  "BXI",
+        "risk_priority":  10,
+        "yahoo_symbol":  "BXI"
+    },
+    {
+        "company_name":  "ISTAR FINANCIAL INC ",
+        "idea_id":  "2de0ac80-cc6a-4aa9-a1d6-7e48ada3f4e9",
+        "perf_1y":  0.464566917123499,
+        "perf_3y":  70523.6197965323,
+        "perf_5y":  86614.170464116,
+        "position_type":  "long",
+        "publication_date":  "2010-06-29",
+        "raw_symbol":  "SFI",
+        "risk_priority":  10,
+        "yahoo_symbol":  "SFI"
+    }
+]
