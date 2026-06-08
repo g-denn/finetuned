@@ -33,10 +33,10 @@ if not os.environ.get("HF_TOKEN"):
 login(token=os.environ["HF_TOKEN"])
 
 # %%
-HF_USERNAME = "YOUR_HF_USERNAME"
+HF_USERNAME = "Gden"
 TRAINING_PROFILE = "free_t4_qwen3_4b"
 
-DO_UPLOAD_DATASET = True
+DO_UPLOAD_DATASET = False
 DO_TRAIN = True
 DO_EVALUATE_BASE = True
 DO_EVALUATE_LORA = True
