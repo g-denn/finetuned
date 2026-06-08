@@ -38,8 +38,12 @@ TRAINING_PROFILE = "free_t4_qwen3_4b"
 
 DO_UPLOAD_DATASET = False
 DO_TRAIN = True
-DO_EVALUATE_BASE = True
+DO_EVALUATE_BASE = False
 DO_EVALUATE_LORA = True
+
+# Use 200 for the first end-to-end smoke test. Set this to None for the real
+# proof run over all 6,672 training rows.
+TRAIN_LIMIT = 200
 
 # Use 20 for the first safety smoke test. Set this to None for the real proof
 # run over all 835 held-out test rows.
@@ -95,6 +99,7 @@ print(json.dumps({
     "dataset_repo": DATASET_REPO,
     "base_model": BASE_MODEL,
     "adapter_repo": ADAPTER_REPO,
+    "train_limit": TRAIN_LIMIT,
     "eval_limit": EVAL_LIMIT,
 }, indent=2))
 
@@ -182,6 +187,9 @@ data_files = {
 }
 
 dataset = load_dataset("json", data_files=data_files)
+train_rows_for_run = len(dataset["train"])
+if TRAIN_LIMIT:
+    train_rows_for_run = min(TRAIN_LIMIT, train_rows_for_run)
 test_rows = [row for row in dataset["test"]]
 if EVAL_LIMIT:
     test_rows = test_rows[:EVAL_LIMIT]
@@ -204,6 +212,7 @@ text_baseline = json.loads(Path(text_baseline_path).read_text())["test"]
 create_repo(ADAPTER_REPO, repo_type="model", private=True, token=os.environ["HF_TOKEN"], exist_ok=True)
 print({
     "train_rows": len(dataset["train"]),
+    "train_rows_for_run": train_rows_for_run,
     "validation_rows": len(dataset["validation"]),
     "test_rows_for_eval": len(test_rows),
     "majority_accuracy": majority_baseline["accuracy"],
@@ -395,11 +404,15 @@ if DO_TRAIN:
         }
 
     formatted = dataset.map(format_example, remove_columns=dataset["train"].column_names)
+    train_dataset = formatted["train"]
+    if TRAIN_LIMIT:
+        train_dataset = train_dataset.select(range(min(TRAIN_LIMIT, len(train_dataset))))
+        print(f"smoke-test training limit active: {len(train_dataset)} rows")
 
     trainer = SFTTrainer(
         model=model,
         processing_class=tokenizer,
-        train_dataset=formatted["train"],
+        train_dataset=train_dataset,
         eval_dataset=formatted["validation"],
         args=SFTConfig(
             output_dir="vic-investment-qwen3-lora",
