@@ -41,6 +41,10 @@ DO_TRAIN = True
 DO_EVALUATE_BASE = False
 DO_EVALUATE_LORA = True
 
+# Keep smoke-mode validation off inside the trainer; the final LoRA evaluation
+# still runs on EVAL_LIMIT held-out rows.
+DO_TRAINER_VALIDATION = False
+
 # Use 200 for the first end-to-end smoke test. Set this to None for the real
 # proof run over all 6,672 training rows.
 TRAIN_LIMIT = 200
@@ -99,6 +103,7 @@ print(json.dumps({
     "dataset_repo": DATASET_REPO,
     "base_model": BASE_MODEL,
     "adapter_repo": ADAPTER_REPO,
+    "trainer_validation": DO_TRAINER_VALIDATION,
     "train_limit": TRAIN_LIMIT,
     "eval_limit": EVAL_LIMIT,
 }, indent=2))
@@ -413,7 +418,7 @@ if DO_TRAIN:
         model=model,
         processing_class=tokenizer,
         train_dataset=train_dataset,
-        eval_dataset=formatted["validation"],
+        eval_dataset=formatted["validation"] if DO_TRAINER_VALIDATION else None,
         args=SFTConfig(
             output_dir="vic-investment-qwen3-lora",
             dataset_text_field="text",
@@ -427,8 +432,8 @@ if DO_TRAIN:
             fp16=not torch.cuda.is_bf16_supported(),
             bf16=torch.cuda.is_bf16_supported(),
             logging_steps=10,
-            eval_strategy="steps",
-            eval_steps=100,
+            eval_strategy="steps" if DO_TRAINER_VALIDATION else "no",
+            eval_steps=100 if DO_TRAINER_VALIDATION else None,
             save_steps=250,
             optim="adamw_8bit",
             weight_decay=0.01,
@@ -438,8 +443,11 @@ if DO_TRAIN:
         ),
     )
     trainer.train()
-    trainer_metrics = trainer.evaluate()
-    print(trainer_metrics)
+    if DO_TRAINER_VALIDATION:
+        trainer_metrics = trainer.evaluate()
+        print(trainer_metrics)
+    else:
+        print("skipping trainer validation in smoke mode")
     model.push_to_hub(ADAPTER_REPO, token=os.environ["HF_TOKEN"], private=True)
     tokenizer.push_to_hub(ADAPTER_REPO, token=os.environ["HF_TOKEN"], private=True)
     print(f"private adapter uploaded: https://huggingface.co/{ADAPTER_REPO}")
