@@ -41,9 +41,9 @@ DO_TRAIN = True
 DO_EVALUATE_BASE = True
 DO_EVALUATE_LORA = True
 
-# Keep this as None for the real proof run over all 835 held-out test rows.
-# Use a small integer, for example 20, only for a smoke test.
-EVAL_LIMIT = None
+# Use 20 for the first safety smoke test. Set this to None for the real proof
+# run over all 835 held-out test rows.
+EVAL_LIMIT = 20
 
 if not torch.cuda.is_available():
     raise RuntimeError("No GPU detected. In Colab, choose Runtime -> Change runtime type -> GPU.")
