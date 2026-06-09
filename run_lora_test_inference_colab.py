@@ -88,18 +88,35 @@ model, tokenizer = FastLanguageModel.from_pretrained(
 FastLanguageModel.for_inference(model)
 
 # %%
-OUTCOME_RE = re.compile(r"primary training label:\s*\S+\s+outcome\s+is\s+(\w+)", re.I)
 VALID = {"excellent", "good", "neutral", "poor", "failed"}
+OUTCOME_RE = re.compile(r"primary training label:\s*\S+\s+outcome\s+is\s+(\w+)", re.I)
+LABEL_RE = re.compile(r"^\W*(excellent|good|neutral|poor|failed)\W*$", re.I)
+LABEL_PROMPT_SUFFIX = (
+    "\n\nFor this evaluation, return exactly one label and nothing else: "
+    "excellent, good, neutral, poor, or failed."
+)
 
 
 def strip_gold_answer(messages):
-    return [messages[0], messages[1]]
+    user_message = dict(messages[1])
+    user_message["content"] = user_message["content"] + LABEL_PROMPT_SUFFIX
+    return [messages[0], user_message]
 
 
 def gold_outcome(messages):
     text = messages[-1]["content"]
     match = OUTCOME_RE.search(text)
     value = match.group(1).lower() if match else None
+    return value if value in VALID else None
+
+
+def extract_outcome(text):
+    match = OUTCOME_RE.search(text)
+    if match:
+        value = match.group(1).lower()
+    else:
+        match = LABEL_RE.search(text.strip())
+        value = match.group(1).lower() if match else None
     return value if value in VALID else None
 
 
@@ -113,18 +130,14 @@ def predict(messages):
     ).to(model.device)
     outputs = model.generate(
         input_ids=inputs,
-        max_new_tokens=220,
+        max_new_tokens=12,
         temperature=0.1,
         top_p=0.9,
         do_sample=False,
         use_cache=True,
     )
     text = tokenizer.decode(outputs[0][inputs.shape[-1]:], skip_special_tokens=True)
-    match = OUTCOME_RE.search(text)
-    predicted = match.group(1).lower() if match else None
-    if predicted not in VALID:
-        predicted = None
-    return predicted, text
+    return extract_outcome(text), text
 
 
 predictions = []

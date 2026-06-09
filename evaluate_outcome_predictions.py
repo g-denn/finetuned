@@ -25,6 +25,7 @@ ROOT = Path(__file__).resolve().parent
 CANONICAL_JSONL = ROOT / "data" / "processed" / "investment_canonical.jsonl"
 VALID_OUTCOMES = {"excellent", "good", "neutral", "poor", "failed"}
 OUTCOME_PATTERN = re.compile(r"primary training label:\s*\S+\s+outcome\s+is\s+(\w+)", re.I)
+LABEL_PATTERN = re.compile(r"^\W*(excellent|good|neutral|poor|failed)\W*$", re.I)
 
 
 def load_test_labels() -> dict[str, dict[str, Any]]:
@@ -60,7 +61,11 @@ def extract_prediction(payload: dict[str, Any]) -> tuple[str | None, str | None]
     else:
         text = extract_text(payload)
         match = OUTCOME_PATTERN.search(text)
-        predicted = match.group(1).strip().lower() if match else None
+        if match:
+            predicted = match.group(1).strip().lower()
+        else:
+            match = LABEL_PATTERN.search(text.strip())
+            predicted = match.group(1).strip().lower() if match else None
 
     if predicted not in VALID_OUTCOMES:
         predicted = None
