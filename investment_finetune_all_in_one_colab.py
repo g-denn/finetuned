@@ -24,7 +24,7 @@ from pathlib import Path
 import torch
 from unsloth import FastLanguageModel
 from datasets import load_dataset
-from huggingface_hub import HfApi, create_repo, hf_hub_download, login, upload_file, whoami
+from huggingface_hub import HfApi, create_repo, hf_hub_download, login, snapshot_download, upload_file, whoami
 from trl import SFTConfig, SFTTrainer
 
 if not os.environ.get("HF_TOKEN"):
@@ -44,6 +44,12 @@ DO_EVALUATE_LORA = True
 # Keep smoke-mode validation off inside the trainer; the final LoRA evaluation
 # still runs on EVAL_LIMIT held-out rows.
 DO_TRAINER_VALIDATION = False
+
+# Cloud checkpoints make Colab restarts survivable. Checkpoints are saved
+# locally and pushed to the private adapter repo on Hugging Face.
+ENABLE_HUB_CHECKPOINTS = True
+RESUME_FROM_HUB_CHECKPOINT = True
+CHECKPOINT_SAVE_STEPS = 25
 
 # Use 200 for the first end-to-end smoke test. Set this to None for the real
 # proof run over all 6,672 training rows.
@@ -90,6 +96,7 @@ MAX_SEQ_LENGTH = PROFILE["max_seq_length"]
 GRADIENT_ACCUMULATION_STEPS = PROFILE["gradient_accumulation_steps"]
 LEARNING_RATE = PROFILE["learning_rate"]
 NUM_TRAIN_EPOCHS = PROFILE["num_train_epochs"]
+TRAIN_OUTPUT_DIR = "vic-investment-qwen3-lora"
 
 if HF_USERNAME == "YOUR_HF_USERNAME":
     HF_USERNAME = whoami(token=os.environ["HF_TOKEN"])["name"]
@@ -104,6 +111,9 @@ print(json.dumps({
     "base_model": BASE_MODEL,
     "adapter_repo": ADAPTER_REPO,
     "trainer_validation": DO_TRAINER_VALIDATION,
+    "hub_checkpoints": ENABLE_HUB_CHECKPOINTS,
+    "resume_from_hub_checkpoint": RESUME_FROM_HUB_CHECKPOINT,
+    "checkpoint_save_steps": CHECKPOINT_SAVE_STEPS,
     "train_limit": TRAIN_LIMIT,
     "eval_limit": EVAL_LIMIT,
 }, indent=2))
@@ -363,6 +373,61 @@ def clear_gpu():
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
 
+
+def latest_checkpoint_path(output_dir):
+    root = Path(output_dir)
+    last_checkpoint = root / "last-checkpoint"
+    if last_checkpoint.is_dir():
+        return str(last_checkpoint)
+
+    checkpoints = []
+    for path in root.glob("checkpoint-*"):
+        if not path.is_dir():
+            continue
+        try:
+            step = int(path.name.rsplit("-", 1)[1])
+        except ValueError:
+            step = -1
+        checkpoints.append((step, path))
+    if not checkpoints:
+        return None
+    return str(max(checkpoints, key=lambda item: item[0])[1])
+
+
+def prepare_resume_checkpoint():
+    local_checkpoint = latest_checkpoint_path(TRAIN_OUTPUT_DIR)
+    if local_checkpoint:
+        print(f"resuming from local checkpoint: {local_checkpoint}")
+        return local_checkpoint
+
+    if not (ENABLE_HUB_CHECKPOINTS and RESUME_FROM_HUB_CHECKPOINT):
+        print("checkpoint resume disabled")
+        return None
+
+    try:
+        snapshot_download(
+            repo_id=ADAPTER_REPO,
+            repo_type="model",
+            token=os.environ["HF_TOKEN"],
+            local_dir=TRAIN_OUTPUT_DIR,
+            allow_patterns=[
+                "last-checkpoint/**",
+                "checkpoint-*/**",
+                "trainer_state.json",
+                "training_args.bin",
+            ],
+        )
+    except Exception as exc:
+        print(f"no hub checkpoint available yet: {exc}")
+        return None
+
+    hub_checkpoint = latest_checkpoint_path(TRAIN_OUTPUT_DIR)
+    if hub_checkpoint:
+        print(f"resuming from hub checkpoint: {hub_checkpoint}")
+    else:
+        print("hub repo exists, but no checkpoint directories were found")
+    return hub_checkpoint
+
 # %% [markdown]
 # ## Optional Base Model Evaluation
 
@@ -433,7 +498,7 @@ if DO_TRAIN:
         train_dataset=train_dataset,
         eval_dataset=formatted["validation"] if DO_TRAINER_VALIDATION else None,
         args=SFTConfig(
-            output_dir="vic-investment-qwen3-lora",
+            output_dir=TRAIN_OUTPUT_DIR,
             dataset_text_field="text",
             max_length=MAX_SEQ_LENGTH,
             packing=False,
@@ -447,15 +512,23 @@ if DO_TRAIN:
             logging_steps=10,
             eval_strategy="steps" if DO_TRAINER_VALIDATION else "no",
             eval_steps=100 if DO_TRAINER_VALIDATION else None,
-            save_steps=250,
+            save_strategy="steps",
+            save_steps=CHECKPOINT_SAVE_STEPS,
+            save_total_limit=3,
             optim="adamw_8bit",
             weight_decay=0.01,
             lr_scheduler_type="linear",
             seed=3407,
             report_to="none",
+            push_to_hub=ENABLE_HUB_CHECKPOINTS,
+            hub_model_id=ADAPTER_REPO if ENABLE_HUB_CHECKPOINTS else None,
+            hub_private_repo=True,
+            hub_strategy="checkpoint",
+            hub_token=os.environ["HF_TOKEN"],
         ),
     )
-    trainer.train()
+    resume_checkpoint = prepare_resume_checkpoint()
+    trainer.train(resume_from_checkpoint=resume_checkpoint)
     if DO_TRAINER_VALIDATION:
         trainer_metrics = trainer.evaluate()
         print(trainer_metrics)
