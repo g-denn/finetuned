@@ -21,7 +21,7 @@ def validate_split(name: str) -> dict[str, int]:
     max_chars = 0
     missing_messages = 0
     bad_roles = 0
-    missing_outcome = 0
+    missing_return_target = 0
     seen_ids: set[str] = set()
     duplicate_ids = 0
 
@@ -40,8 +40,21 @@ def validate_split(name: str) -> dict[str, int]:
             if roles != ["system", "user", "assistant"]:
                 bad_roles += 1
             assistant = messages[-1].get("content", "")
-            if "Validated outcome summary:" not in assistant or "Primary training label:" not in assistant:
-                missing_outcome += 1
+            try:
+                target = json.loads(assistant)
+            except json.JSONDecodeError:
+                missing_return_target += 1
+            else:
+                required = {
+                    "schema_version",
+                    "horizon",
+                    "direction",
+                    "raw_stock_multiplier_3y",
+                    "direction_adjusted_multiplier_3y",
+                    "outcome_3y",
+                }
+                if not isinstance(target, dict) or not required.issubset(target):
+                    missing_return_target += 1
             max_chars = max(max_chars, sum(len(str(message.get("content", ""))) for message in messages))
             idea_id = (payload.get("metadata") or {}).get("idea_id")
             if idea_id in seen_ids:
@@ -56,7 +69,7 @@ def validate_split(name: str) -> dict[str, int]:
         "max_chars": max_chars,
         "missing_messages": missing_messages,
         "bad_roles": bad_roles,
-        "missing_outcome": missing_outcome,
+        "missing_return_target": missing_return_target,
     }
 
 
@@ -64,7 +77,7 @@ def main() -> int:
     results = {split: validate_split(split) for split in SPLITS}
     print(json.dumps(results, indent=2, sort_keys=True))
     if any(
-        stats["missing_messages"] or stats["bad_roles"] or stats["missing_outcome"] or stats["duplicate_ids"]
+        stats["missing_messages"] or stats["bad_roles"] or stats["missing_return_target"] or stats["duplicate_ids"]
         for stats in results.values()
     ):
         return 1

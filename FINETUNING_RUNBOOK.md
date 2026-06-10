@@ -13,9 +13,6 @@ Generated files:
 - `data/processed/investment_test.jsonl`
 - `reports/dataset_audit.md`
 - `reports/dataset_audit.json`
-- `reports/majority_baseline_predictions.jsonl`
-- `reports/majority_baseline_metrics.json`
-- `reports/text_baseline_metrics.json`
 - `hf_dataset_README.md`
 - `hf_model_README.md`
 - `investment_finetune_all_in_one_colab.py`
@@ -41,25 +38,26 @@ Dataset audit:
 
 - Raw validated rows: 8,353
 - Canonical rows with memo text: 8,341
-- Train: 6,672 rows, dated 2000-02-10 to 2020-05-11
-- Validation: 834 rows, dated 2020-05-11 to 2021-08-06
-- Test: 835 rows, dated 2021-08-07 to 2022-11-03
+- SFT rows with 3-year return targets: 5,973
+- Train: 4,778 rows, dated 2000-02-25 to 2020-09-01
+- Validation: 597 rows, dated 2020-09-01 to 2021-10-14
+- Test: 598 rows, dated 2021-10-14 to 2022-11-03
 - Long ideas: 3,655
 - Short ideas: 4,686
 
 The split is time-based so the test set behaves like future unseen data.
 
-Current baseline:
+Current baseline approach:
 
-- Majority-class baseline: predicts `neutral` for every test row.
-- Held-out test accuracy: 29.70%.
-- Long accuracy: 30.57%.
-- Short accuracy: 28.75%.
-- TF-IDF + logistic regression text baseline test accuracy: 30.90%.
-- Text baseline long accuracy: 31.72%.
-- Text baseline short accuracy: 30.00%.
+- Median-return baseline: predicts the train-set median 3-year
+  direction-adjusted multiplier for every test row.
+- Fast TF-IDF/Ridge text baseline: computed directly inside the Colab notebook
+  using Colab's runtime.
+- Primary metric: 3-year direction-adjusted return MAE.
+- Secondary metric: bucket accuracy for `excellent`, `good`, `neutral`, `poor`,
+  and `failed`.
 
-The fine-tuned model should beat both baselines on the held-out test set before
+The fine-tuned model should beat both baselines on held-out test-set MAE before
 it is considered useful.
 
 ## What The Fine-Tune Can And Cannot Prove
@@ -267,8 +265,10 @@ The script creates a private dataset repo and uploads:
 - canonical dataset
 - audit report
 - dataset card
-- majority-class baseline metrics
-- TF-IDF text baseline metrics
+- runbook
+
+Baselines are computed inside the training/evaluation Colab notebook so they
+match the active `EVAL_LIMIT` and return-regression target.
 
 ### Option B: Colab Upload
 
@@ -468,10 +468,10 @@ C:\Users\Dell\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\py
 Prediction file format:
 
 ```json
-{"idea_id": "example-id", "predicted_outcome": "good"}
+{"idea_id": "example-id", "predicted_direction_adjusted_multiplier_3y": 1.64}
 ```
 
-Accepted outcomes:
+The evaluator derives the bucket from the predicted multiplier:
 
 ```text
 excellent, good, neutral, poor, failed

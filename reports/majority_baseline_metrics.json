@@ -1,36 +1,13 @@
 {
-  "accuracy": 0.2970059880239521,
-  "by_direction": {
-    "long": {
-      "accuracy": 0.3057471264367816,
-      "correct": 133,
-      "scored": 435
-    },
-    "short": {
-      "accuracy": 0.2875,
-      "correct": 115,
-      "scored": 400
-    }
-  },
-  "confusion": {
-    "excellent": {
-      "neutral": 82
-    },
-    "failed": {
-      "neutral": 119
-    },
-    "good": {
-      "neutral": 153
-    },
-    "neutral": {
-      "neutral": 248
-    },
-    "poor": {
-      "neutral": 233
-    }
-  },
-  "correct": 248,
-  "missing_prediction": 0,
-  "scored": 835,
-  "unknown_id": 0
+  "bucket_accuracy": 0.2909698996655518,
+  "bucket_correct": 174,
+  "bucket_scored": 598,
+  "mae": 0.858953234396747,
+  "mean_abs_log_error": 0.6801759703634976,
+  "output": "C:\\Users\\Dell\\finetuned\\reports\\majority_baseline_predictions.jsonl",
+  "predicted_outcome_3y": "neutral",
+  "prediction": 0.9737651773178602,
+  "rmse": 1.7219758186805127,
+  "scored": 598,
+  "test_rows": 598
 }

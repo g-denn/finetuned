@@ -17,12 +17,7 @@ $RelativeFiles = @(
     "hf_dataset_README.md",
     "FINETUNING_RUNBOOK.md",
     "reports\dataset_audit.md",
-    "reports\dataset_audit.json",
-    "reports\majority_baseline_metrics.json",
-    "reports\majority_baseline_predictions.jsonl",
-    "reports\text_baseline_metrics.json",
-    "reports\text_baseline_test_predictions.jsonl",
-    "reports\text_baseline_val_predictions.jsonl"
+    "reports\dataset_audit.json"
 )
 
 Add-Type -AssemblyName System.IO.Compression

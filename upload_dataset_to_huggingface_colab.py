@@ -6,7 +6,7 @@
 # First create `dist/hf_dataset_upload_bundle.zip` locally, then upload that zip
 # into the Colab file browser. This notebook extracts the bundle, creates a
 # private Hugging Face dataset repo, and uploads the processed train/val/test
-# files plus audit/baseline reports.
+# files plus audit reports. Baselines are computed inside the training notebook.
 
 # %%
 !pip install -q --upgrade pip
@@ -70,11 +70,6 @@ uploads = [
     ("FINETUNING_RUNBOOK.md", "FINETUNING_RUNBOOK.md"),
     ("reports/dataset_audit.md", "reports/dataset_audit.md"),
     ("reports/dataset_audit.json", "reports/dataset_audit.json"),
-    ("reports/majority_baseline_metrics.json", "reports/majority_baseline_metrics.json"),
-    ("reports/majority_baseline_predictions.jsonl", "reports/majority_baseline_predictions.jsonl"),
-    ("reports/text_baseline_metrics.json", "reports/text_baseline_metrics.json"),
-    ("reports/text_baseline_test_predictions.jsonl", "reports/text_baseline_test_predictions.jsonl"),
-    ("reports/text_baseline_val_predictions.jsonl", "reports/text_baseline_val_predictions.jsonl"),
 ]
 
 for local_name, repo_name in uploads:
@@ -94,4 +89,3 @@ for local_name, repo_name in uploads:
 api = HfApi(token=os.environ["HF_TOKEN"])
 info = api.dataset_info(DATASET_REPO)
 print(f"Private dataset uploaded: https://huggingface.co/datasets/{info.id}")
-

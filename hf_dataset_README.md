@@ -50,9 +50,9 @@ The split is time-based:
 This avoids random leakage across repeated authors, market regimes, and similar
 company cases.
 
-## Labels
+## Targets
 
-Labels include:
+Targets include:
 
 - raw stock performance multipliers
 - direction-adjusted performance multipliers
@@ -62,6 +62,10 @@ Direction adjustment is essential:
 
 - for long ideas, higher stock performance is better
 - for short ideas, lower stock performance is better
+
+The supervised chat target is parseable JSON centered on the 3-year
+direction-adjusted multiplier. The outcome bucket is derived from that numeric
+return target, so evaluation can measure both return-error and bucket accuracy.
 
 ## Intended Use
 

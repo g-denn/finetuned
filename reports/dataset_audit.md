@@ -2,6 +2,7 @@
 
 - Raw validated training rows: 8353
 - Canonical rows with memo text: 8341
+- SFT rows with 3y return target: 5973
 - Missing idea metadata skipped: 0
 - Missing descriptions before filtering: 12
 - Long ideas: 3655
@@ -9,9 +10,9 @@
 
 ## Time-Based Splits
 
-- train: 6672 rows (2000-02-10 to 2020-05-11)
-- val: 834 rows (2020-05-11 to 2021-08-06)
-- test: 835 rows (2021-08-07 to 2022-11-03)
+- train: 4778 rows (2000-02-25 to 2020-09-01)
+- val: 597 rows (2020-09-01 to 2021-10-14)
+- test: 598 rows (2021-10-14 to 2022-11-03)
 
 ## Horizon Coverage
 

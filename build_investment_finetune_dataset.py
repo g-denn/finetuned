@@ -210,27 +210,28 @@ def build_input(row: dict[str, Any]) -> str:
     return "\n\n".join(fields)
 
 
+def rounded_multiplier(value: float | None) -> float | None:
+    if value is None:
+        return None
+    return round(value, 6)
+
+
 def build_target(row: dict[str, Any]) -> str:
-    primary = row["primary_horizon"]
-    lines = [
-        "Validated outcome summary:",
-        f"- Direction: {'short' if row['is_short'] else 'long'}",
-    ]
-    for horizon in HORIZONS:
-        raw = row.get(f"raw_perf_{horizon}")
-        directional = row.get(f"directional_perf_{horizon}")
-        if raw is not None:
-            lines.append(
-                f"- {horizon}: stock multiplier {compact_float(raw)}, "
-                f"direction-adjusted multiplier {compact_float(directional)}, "
-                f"outcome {outcome_bucket(directional)}"
-            )
-    if primary:
-        lines.append(f"- Primary training label: {primary} outcome is {row[f'outcome_{primary}']}.")
-    lines.append(
-        "Use this only as historical supervised evidence; do not treat it as a live investment recommendation."
-    )
-    return "\n".join(lines)
+    """Return the supervised answer as parseable JSON.
+
+    The task is intentionally centered on the 3-year direction-adjusted return
+    because closeness to the actual return is more informative than a coarse
+    five-class label alone.
+    """
+    payload = {
+        "schema_version": "return_regression_v1",
+        "horizon": "3y",
+        "direction": "short" if row["is_short"] else "long",
+        "raw_stock_multiplier_3y": rounded_multiplier(row.get("raw_perf_3y")),
+        "direction_adjusted_multiplier_3y": rounded_multiplier(row.get("directional_perf_3y")),
+        "outcome_3y": row.get("outcome_3y"),
+    }
+    return json.dumps(payload, indent=2, sort_keys=True)
 
 
 def read_training_rows() -> list[dict[str, str]]:
@@ -308,7 +309,8 @@ def build() -> None:
         canonical.append(item)
 
     canonical = [row for row in canonical if row["description"]]
-    splits = split_rows(canonical)
+    sft_rows = [row for row in canonical if row.get("directional_perf_3y") is not None]
+    splits = split_rows(sft_rows)
 
     canonical_jsonl = OUT_DIR / "investment_canonical.jsonl"
     with canonical_jsonl.open("w", encoding="utf-8") as handle:
@@ -332,15 +334,17 @@ def build() -> None:
                         "role": "system",
                         "content": (
                             "You are an investment research assistant trained to analyze historical "
-                            "investment memos and report validated future outcomes. You must separate "
-                            "what was known at publication time from later outcome evidence."
+                            "investment memos and predict validated future 3-year outcomes. You must "
+                            "use only information known at publication time and return parseable JSON."
                         ),
                     },
                     {
                         "role": "user",
                         "content": (
-                            "Analyze this historical investment memo and produce the validated "
-                            "outcome summary using the supervised label format.\n\n"
+                            "Analyze this historical investment memo and predict the 3-year "
+                            "direction-adjusted return. Return JSON with schema_version, horizon, "
+                            "direction, raw_stock_multiplier_3y, direction_adjusted_multiplier_3y, "
+                            "and outcome_3y.\n\n"
                             + build_input(row)
                         ),
                     },
@@ -353,6 +357,7 @@ def build() -> None:
         "source_sql_dump": str(SQL_DUMP),
         "raw_training_rows": len(training_rows),
         "canonical_rows_with_text": len(canonical),
+        "sft_rows_with_3y_target": len(sft_rows),
         "missing_idea_meta": missing_idea_meta,
         "missing_description_before_filter": missing_description,
         "split_counts": {name: len(items) for name, items in splits.items()},
@@ -383,6 +388,7 @@ def build() -> None:
         "",
         f"- Raw validated training rows: {summary['raw_training_rows']}",
         f"- Canonical rows with memo text: {summary['canonical_rows_with_text']}",
+        f"- SFT rows with 3y return target: {summary['sft_rows_with_3y_target']}",
         f"- Missing idea metadata skipped: {summary['missing_idea_meta']}",
         f"- Missing descriptions before filtering: {summary['missing_description_before_filter']}",
         f"- Long ideas: {summary['direction_counts']['long']}",

@@ -2,16 +2,16 @@
   "canonical_rows_with_text": 8341,
   "date_ranges": {
     "test": [
-      "2021-08-07",
+      "2021-10-14",
       "2022-11-03"
     ],
     "train": [
-      "2000-02-10",
-      "2020-05-11"
+      "2000-02-25",
+      "2020-09-01"
     ],
     "val": [
-      "2020-05-11",
-      "2021-08-06"
+      "2020-09-01",
+      "2021-10-14"
     ]
   },
   "direction_counts": {
@@ -35,11 +35,12 @@
     "poor": 2249
   },
   "raw_training_rows": 8353,
+  "sft_rows_with_3y_target": 5973,
   "source_sql_dump": "C:\\Users\\Dell\\finetuned\\VIC_IDEAS.sql",
   "source_training_csv": "C:\\Users\\Dell\\finetuned\\eodhd_output\\full_run\\training_ready_after_sec_yahoo_salvage.csv",
   "split_counts": {
-    "test": 835,
-    "train": 6672,
-    "val": 834
+    "test": 598,
+    "train": 4778,
+    "val": 597
   }
 }

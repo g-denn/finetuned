@@ -43,11 +43,6 @@ def main() -> int:
         ROOT / "FINETUNING_RUNBOOK.md",
         REPORTS_DIR / "dataset_audit.md",
         REPORTS_DIR / "dataset_audit.json",
-        REPORTS_DIR / "majority_baseline_metrics.json",
-        REPORTS_DIR / "majority_baseline_predictions.jsonl",
-        REPORTS_DIR / "text_baseline_metrics.json",
-        REPORTS_DIR / "text_baseline_test_predictions.jsonl",
-        REPORTS_DIR / "text_baseline_val_predictions.jsonl",
     ]
     manifest: list[tuple[Path, str]] = []
     for path in uploads:

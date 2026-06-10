@@ -9,17 +9,19 @@
 
 # %%
 !pip install -q --upgrade pip
-!pip install -q "unsloth[colab-new]" "trl" "datasets" "huggingface_hub" "accelerate" "bitsandbytes"
+!pip install -q "unsloth[colab-new]" "trl" "datasets" "huggingface_hub" "accelerate" "bitsandbytes" "scikit-learn"
 
 # %%
 import gc
 import json
+import math
 import os
 import re
 import shutil
 import zipfile
 from getpass import getpass
 from pathlib import Path
+from statistics import median
 
 import torch
 from unsloth import FastLanguageModel
@@ -52,11 +54,11 @@ RESUME_FROM_HUB_CHECKPOINT = True
 CHECKPOINT_SAVE_STEPS = 25
 
 # Use 200 for the first end-to-end smoke test. Set this to None for the real
-# proof run over all 6,672 training rows.
+# proof run over all 4,778 training rows with 3-year return targets.
 TRAIN_LIMIT = 200
 
 # Use 20 for the first safety smoke test. Set this to None for the real proof
-# run over all 835 held-out test rows.
+# run over all 598 held-out test rows with 3-year return targets.
 EVAL_LIMIT = 20
 
 if not torch.cuda.is_available():
@@ -149,11 +151,6 @@ def upload_dataset_bundle():
         ("FINETUNING_RUNBOOK.md", "FINETUNING_RUNBOOK.md"),
         ("reports/dataset_audit.md", "reports/dataset_audit.md"),
         ("reports/dataset_audit.json", "reports/dataset_audit.json"),
-        ("reports/majority_baseline_metrics.json", "reports/majority_baseline_metrics.json"),
-        ("reports/majority_baseline_predictions.jsonl", "reports/majority_baseline_predictions.jsonl"),
-        ("reports/text_baseline_metrics.json", "reports/text_baseline_metrics.json"),
-        ("reports/text_baseline_test_predictions.jsonl", "reports/text_baseline_test_predictions.jsonl"),
-        ("reports/text_baseline_val_predictions.jsonl", "reports/text_baseline_val_predictions.jsonl"),
     ]
     for local_name, repo_name in uploads:
         local_path = EXTRACT_DIR / local_name
@@ -209,65 +206,114 @@ test_rows = [row for row in dataset["test"]]
 if EVAL_LIMIT:
     test_rows = test_rows[:EVAL_LIMIT]
 
-majority_baseline_path = hf_hub_download(
-    repo_id=DATASET_REPO,
-    repo_type="dataset",
-    filename="reports/majority_baseline_metrics.json",
-    token=os.environ["HF_TOKEN"],
-)
-text_baseline_path = hf_hub_download(
-    repo_id=DATASET_REPO,
-    repo_type="dataset",
-    filename="reports/text_baseline_metrics.json",
-    token=os.environ["HF_TOKEN"],
-)
-
-majority_baseline = json.loads(Path(majority_baseline_path).read_text())
-text_baseline = json.loads(Path(text_baseline_path).read_text())["test"]
 create_repo(ADAPTER_REPO, repo_type="model", private=True, token=os.environ["HF_TOKEN"], exist_ok=True)
 print({
     "train_rows": len(dataset["train"]),
     "train_rows_for_run": train_rows_for_run,
     "validation_rows": len(dataset["validation"]),
     "test_rows_for_eval": len(test_rows),
-    "majority_accuracy": majority_baseline["accuracy"],
-    "text_baseline_accuracy": text_baseline["accuracy"],
 })
 
 # %% [markdown]
 # ## Shared Evaluation Helpers
 
 # %%
-OUTCOME_RE = re.compile(r"primary training label:\s*\S+\s+outcome\s+is\s+(\w+)", re.I)
 VALID_OUTCOMES = {"excellent", "good", "neutral", "poor", "failed"}
-LABEL_RE = re.compile(r"^\W*(excellent|good|neutral|poor|failed)\W*$", re.I)
-LABEL_PROMPT_SUFFIX = (
-    "\n\nFor this evaluation, return exactly one label and nothing else: "
-    "excellent, good, neutral, poor, or failed."
+MULTIPLIER_RE = re.compile(
+    r"(?:direction[_ -]?adjusted[_ -]?multiplier(?:_3y)?|directional[_ -]?perf(?:_3y)?)"
+    r"[^0-9.+-]*([+-]?(?:\d+(?:\.\d*)?|\.\d+))",
+    re.I,
+)
+RETURN_PROMPT_SUFFIX = (
+    "\n\nFor this evaluation, return JSON only with these keys: "
+    "schema_version, horizon, direction, raw_stock_multiplier_3y, "
+    "direction_adjusted_multiplier_3y, outcome_3y. "
+    "Predict direction_adjusted_multiplier_3y as a positive number."
 )
 
 
 def strip_gold_answer(messages):
     user_message = dict(messages[1])
-    user_message["content"] = user_message["content"] + LABEL_PROMPT_SUFFIX
+    user_message["content"] = user_message["content"] + RETURN_PROMPT_SUFFIX
     return [messages[0], user_message]
 
 
-def gold_outcome(messages):
-    text = messages[-1]["content"]
-    match = OUTCOME_RE.search(text)
-    value = match.group(1).lower() if match else None
-    return value if value in VALID_OUTCOMES else None
+def outcome_bucket(multiplier):
+    if multiplier is None or not math.isfinite(multiplier) or multiplier <= 0:
+        return None
+    if multiplier >= 3.0:
+        return "excellent"
+    if multiplier >= 1.5:
+        return "good"
+    if multiplier >= 0.8:
+        return "neutral"
+    if multiplier >= 0.4:
+        return "poor"
+    return "failed"
 
 
-def extract_outcome(text):
-    match = OUTCOME_RE.search(text)
-    if match:
-        value = match.group(1).lower()
-    else:
-        match = LABEL_RE.search(text.strip())
-        value = match.group(1).lower() if match else None
-    return value if value in VALID_OUTCOMES else None
+def parse_positive_float(value):
+    try:
+        parsed = float(value)
+    except (TypeError, ValueError):
+        return None
+    return parsed if math.isfinite(parsed) and parsed > 0 else None
+
+
+def parse_json_object(text):
+    stripped = text.strip()
+    if stripped.startswith("```"):
+        stripped = re.sub(r"^```(?:json)?\s*", "", stripped, flags=re.I)
+        stripped = re.sub(r"\s*```$", "", stripped)
+    try:
+        parsed = json.loads(stripped)
+    except json.JSONDecodeError:
+        match = re.search(r"\{.*\}", stripped, flags=re.S)
+        if not match:
+            return None
+        try:
+            parsed = json.loads(match.group(0))
+        except json.JSONDecodeError:
+            return None
+    return parsed if isinstance(parsed, dict) else None
+
+
+def gold_target(messages):
+    parsed = parse_json_object(messages[-1]["content"])
+    if not parsed:
+        return {"direction_adjusted_multiplier_3y": None, "outcome_3y": None}
+    target = parse_positive_float(parsed.get("direction_adjusted_multiplier_3y"))
+    outcome = parsed.get("outcome_3y")
+    if isinstance(outcome, str):
+        outcome = outcome.strip().lower()
+    if outcome not in VALID_OUTCOMES:
+        outcome = outcome_bucket(target)
+    return {"direction_adjusted_multiplier_3y": target, "outcome_3y": outcome}
+
+
+def extract_prediction(text):
+    parsed = parse_json_object(text)
+    predicted = None
+    provided_outcome = None
+    if parsed:
+        predicted = parse_positive_float(
+            parsed.get("direction_adjusted_multiplier_3y")
+            or parsed.get("directional_perf_3y")
+            or parsed.get("predicted_direction_adjusted_multiplier_3y")
+        )
+        provided_outcome = parsed.get("outcome_3y") or parsed.get("predicted_outcome_3y")
+    if predicted is None:
+        match = MULTIPLIER_RE.search(text)
+        predicted = parse_positive_float(match.group(1)) if match else None
+    if isinstance(provided_outcome, str):
+        provided_outcome = provided_outcome.strip().lower()
+    if provided_outcome not in VALID_OUTCOMES:
+        provided_outcome = None
+    return {
+        "direction_adjusted_multiplier_3y": predicted,
+        "derived_outcome_3y": outcome_bucket(predicted),
+        "provided_outcome_3y": provided_outcome,
+    }
 
 
 def apply_chat_template_safe(tokenizer, messages, **kwargs):
@@ -288,45 +334,82 @@ def predict_one(model, tokenizer, messages):
     ).to(model.device)
     outputs = model.generate(
         input_ids=inputs,
-        max_new_tokens=12,
+        max_new_tokens=96,
         temperature=0.1,
         top_p=0.9,
         do_sample=False,
         use_cache=True,
     )
     text = tokenizer.decode(outputs[0][inputs.shape[-1]:], skip_special_tokens=True)
-    return extract_outcome(text), text
+    return extract_prediction(text), text
+
+
+def summarize_errors(errors, log_errors):
+    squared = [value * value for value in errors]
+    return {
+        "mae": sum(errors) / len(errors) if errors else 0.0,
+        "rmse": math.sqrt(sum(squared) / len(squared)) if squared else 0.0,
+        "mean_abs_log_error": sum(log_errors) / len(log_errors) if log_errors else 0.0,
+    }
 
 
 def evaluate_loaded_model(model, tokenizer, rows, artifact_prefix):
     FastLanguageModel.for_inference(model)
     predictions = []
-    correct = 0
     scored = 0
     missing = 0
+    missing_gold = 0
+    bucket_correct = 0
+    bucket_scored = 0
+    provided_outcome_correct = 0
+    provided_outcome_scored = 0
+    errors = []
+    log_errors = []
     by_direction = {
-        "long": {"correct": 0, "scored": 0},
-        "short": {"correct": 0, "scored": 0},
+        "long": {"scored": 0, "abs_error_sum": 0.0, "squared_error_sum": 0.0, "abs_log_error_sum": 0.0, "bucket_correct": 0, "bucket_scored": 0},
+        "short": {"scored": 0, "abs_error_sum": 0.0, "squared_error_sum": 0.0, "abs_log_error_sum": 0.0, "bucket_correct": 0, "bucket_scored": 0},
     }
     confusion = {}
     for index, row in enumerate(rows, start=1):
         predicted, text = predict_one(model, tokenizer, row["messages"])
-        truth = gold_outcome(row["messages"])
+        truth = gold_target(row["messages"])
         user_text = row["messages"][1]["content"]
         direction = "short" if "\n\nDirection: SHORT\n\n" in user_text else "long"
-        if predicted is None or truth is None:
+        predicted_multiplier = predicted["direction_adjusted_multiplier_3y"]
+        predicted_bucket = predicted["derived_outcome_3y"]
+        truth_multiplier = truth["direction_adjusted_multiplier_3y"]
+        truth_bucket = truth["outcome_3y"]
+        if truth_multiplier is None or truth_bucket is None:
+            missing_gold += 1
+        elif predicted_multiplier is None:
             missing += 1
         else:
             scored += 1
-            correct += int(predicted == truth)
+            error = abs(predicted_multiplier - truth_multiplier)
+            log_error = abs(math.log(predicted_multiplier) - math.log(truth_multiplier))
+            errors.append(error)
+            log_errors.append(log_error)
             by_direction[direction]["scored"] += 1
-            by_direction[direction]["correct"] += int(predicted == truth)
-            confusion.setdefault(truth, {})
-            confusion[truth][predicted] = confusion[truth].get(predicted, 0) + 1
+            by_direction[direction]["abs_error_sum"] += error
+            by_direction[direction]["squared_error_sum"] += error * error
+            by_direction[direction]["abs_log_error_sum"] += log_error
+            if predicted_bucket:
+                bucket_scored += 1
+                bucket_correct += int(predicted_bucket == truth_bucket)
+                by_direction[direction]["bucket_scored"] += 1
+                by_direction[direction]["bucket_correct"] += int(predicted_bucket == truth_bucket)
+                confusion.setdefault(truth_bucket, {})
+                confusion[truth_bucket][predicted_bucket] = confusion[truth_bucket].get(predicted_bucket, 0) + 1
+            if predicted["provided_outcome_3y"]:
+                provided_outcome_scored += 1
+                provided_outcome_correct += int(predicted["provided_outcome_3y"] == truth_bucket)
         predictions.append({
             "idea_id": row["metadata"]["idea_id"],
-            "predicted_outcome": predicted,
-            "gold_outcome": truth,
+            "predicted_direction_adjusted_multiplier_3y": predicted_multiplier,
+            "predicted_outcome_3y": predicted_bucket,
+            "provided_outcome_3y": predicted["provided_outcome_3y"],
+            "gold_direction_adjusted_multiplier_3y": truth_multiplier,
+            "gold_outcome_3y": truth_bucket,
             "assistant": text,
         })
         if index % 10 == 0:
@@ -335,14 +418,23 @@ def evaluate_loaded_model(model, tokenizer, rows, artifact_prefix):
         "limit": EVAL_LIMIT,
         "rows": len(rows),
         "scored": scored,
-        "correct": correct,
-        "accuracy": correct / scored if scored else 0.0,
+        **summarize_errors(errors, log_errors),
+        "bucket_scored": bucket_scored,
+        "bucket_correct": bucket_correct,
+        "bucket_accuracy": bucket_correct / bucket_scored if bucket_scored else 0.0,
+        "provided_outcome_scored": provided_outcome_scored,
+        "provided_outcome_accuracy": provided_outcome_correct / provided_outcome_scored if provided_outcome_scored else 0.0,
         "missing": missing,
+        "missing_gold_3y": missing_gold,
         "by_direction": {
             key: {
                 "scored": value["scored"],
-                "correct": value["correct"],
-                "accuracy": value["correct"] / value["scored"] if value["scored"] else 0.0,
+                "mae": value["abs_error_sum"] / value["scored"] if value["scored"] else 0.0,
+                "rmse": math.sqrt(value["squared_error_sum"] / value["scored"]) if value["scored"] else 0.0,
+                "mean_abs_log_error": value["abs_log_error_sum"] / value["scored"] if value["scored"] else 0.0,
+                "bucket_scored": value["bucket_scored"],
+                "bucket_correct": value["bucket_correct"],
+                "bucket_accuracy": value["bucket_correct"] / value["bucket_scored"] if value["bucket_scored"] else 0.0,
             }
             for key, value in by_direction.items()
         },
@@ -366,6 +458,157 @@ def evaluate_loaded_model(model, tokenizer, rows, artifact_prefix):
         print(f"uploaded model artifact: {path}")
     print(json.dumps(metrics, indent=2, sort_keys=True))
     return metrics
+
+
+def direction_from_row(row):
+    user_text = row["messages"][1]["content"]
+    return "short" if "\n\nDirection: SHORT\n\n" in user_text else "long"
+
+
+def row_input_text(row):
+    return row["messages"][1]["content"]
+
+
+def score_numeric_predictions(rows, predictions, artifact_prefix=None):
+    scored = 0
+    missing_gold = 0
+    errors = []
+    log_errors = []
+    bucket_correct = 0
+    bucket_scored = 0
+    by_direction = {
+        "long": {"scored": 0, "abs_error_sum": 0.0, "squared_error_sum": 0.0, "abs_log_error_sum": 0.0, "bucket_correct": 0, "bucket_scored": 0},
+        "short": {"scored": 0, "abs_error_sum": 0.0, "squared_error_sum": 0.0, "abs_log_error_sum": 0.0, "bucket_correct": 0, "bucket_scored": 0},
+    }
+    confusion = {}
+    records = []
+    for row, predicted_multiplier in zip(rows, predictions, strict=True):
+        truth = gold_target(row["messages"])
+        truth_multiplier = truth["direction_adjusted_multiplier_3y"]
+        truth_bucket = truth["outcome_3y"]
+        predicted_bucket = outcome_bucket(predicted_multiplier)
+        direction = direction_from_row(row)
+        if truth_multiplier is None or truth_bucket is None:
+            missing_gold += 1
+            continue
+        scored += 1
+        error = abs(predicted_multiplier - truth_multiplier)
+        log_error = abs(math.log(predicted_multiplier) - math.log(truth_multiplier))
+        errors.append(error)
+        log_errors.append(log_error)
+        by_direction[direction]["scored"] += 1
+        by_direction[direction]["abs_error_sum"] += error
+        by_direction[direction]["squared_error_sum"] += error * error
+        by_direction[direction]["abs_log_error_sum"] += log_error
+        if predicted_bucket:
+            bucket_scored += 1
+            bucket_correct += int(predicted_bucket == truth_bucket)
+            by_direction[direction]["bucket_scored"] += 1
+            by_direction[direction]["bucket_correct"] += int(predicted_bucket == truth_bucket)
+            confusion.setdefault(truth_bucket, {})
+            confusion[truth_bucket][predicted_bucket] = confusion[truth_bucket].get(predicted_bucket, 0) + 1
+        records.append({
+            "idea_id": row["metadata"]["idea_id"],
+            "predicted_direction_adjusted_multiplier_3y": predicted_multiplier,
+            "predicted_outcome_3y": predicted_bucket,
+            "gold_direction_adjusted_multiplier_3y": truth_multiplier,
+            "gold_outcome_3y": truth_bucket,
+            "baseline": artifact_prefix,
+        })
+    metrics = {
+        "limit": EVAL_LIMIT,
+        "rows": len(rows),
+        "scored": scored,
+        **summarize_errors(errors, log_errors),
+        "bucket_scored": bucket_scored,
+        "bucket_correct": bucket_correct,
+        "bucket_accuracy": bucket_correct / bucket_scored if bucket_scored else 0.0,
+        "missing_gold_3y": missing_gold,
+        "by_direction": {
+            key: {
+                "scored": value["scored"],
+                "mae": value["abs_error_sum"] / value["scored"] if value["scored"] else 0.0,
+                "rmse": math.sqrt(value["squared_error_sum"] / value["scored"]) if value["scored"] else 0.0,
+                "mean_abs_log_error": value["abs_log_error_sum"] / value["scored"] if value["scored"] else 0.0,
+                "bucket_scored": value["bucket_scored"],
+                "bucket_correct": value["bucket_correct"],
+                "bucket_accuracy": value["bucket_correct"] / value["bucket_scored"] if value["bucket_scored"] else 0.0,
+            }
+            for key, value in by_direction.items()
+        },
+        "confusion": confusion,
+    }
+    if artifact_prefix:
+        pred_path = f"{artifact_prefix}_test_predictions.jsonl"
+        metrics_path = f"{artifact_prefix}_test_metrics.json"
+        with open(pred_path, "w", encoding="utf-8") as handle:
+            for item in records:
+                handle.write(json.dumps(item, ensure_ascii=False) + "\n")
+        with open(metrics_path, "w", encoding="utf-8") as handle:
+            json.dump(metrics, handle, indent=2, sort_keys=True)
+        for path in (pred_path, metrics_path):
+            upload_file(
+                path_or_fileobj=path,
+                path_in_repo=path,
+                repo_id=ADAPTER_REPO,
+                repo_type="model",
+                token=os.environ["HF_TOKEN"],
+            )
+            print(f"uploaded baseline artifact: {path}")
+    return metrics
+
+
+def compute_median_baseline(train_rows, eval_rows):
+    train_targets = [
+        target
+        for row in train_rows
+        if (target := gold_target(row["messages"])["direction_adjusted_multiplier_3y"]) is not None
+    ]
+    prediction = median(train_targets)
+    metrics = score_numeric_predictions(eval_rows, [prediction] * len(eval_rows), "median_baseline")
+    metrics["prediction"] = prediction
+    metrics["predicted_outcome_3y"] = outcome_bucket(prediction)
+    print("median baseline")
+    print(json.dumps(metrics, indent=2, sort_keys=True))
+    return metrics
+
+
+def compute_text_baseline(train_rows, eval_rows):
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.linear_model import Ridge
+    from sklearn.pipeline import Pipeline
+
+    filtered_train = []
+    y_train = []
+    for row in train_rows:
+        target = gold_target(row["messages"])["direction_adjusted_multiplier_3y"]
+        if target is None:
+            continue
+        filtered_train.append(row)
+        y_train.append(math.log(target))
+    model = Pipeline([
+        ("tfidf", TfidfVectorizer(
+            lowercase=True,
+            strip_accents="unicode",
+            ngram_range=(1, 2),
+            min_df=3,
+            max_df=0.9,
+            max_features=120_000,
+            sublinear_tf=True,
+        )),
+        ("reg", Ridge(alpha=10.0)),
+    ])
+    model.fit([row_input_text(row) for row in filtered_train], y_train)
+    predictions = [max(0.001, math.exp(value)) for value in model.predict([row_input_text(row) for row in eval_rows])]
+    metrics = score_numeric_predictions(eval_rows, predictions, "text_baseline")
+    print("text baseline")
+    print(json.dumps(metrics, indent=2, sort_keys=True))
+    return metrics
+
+
+train_rows_for_baseline = [row for row in dataset["train"]]
+median_baseline = compute_median_baseline(train_rows_for_baseline, test_rows)
+text_baseline = compute_text_baseline(train_rows_for_baseline, test_rows)
 
 
 def clear_gpu():
@@ -565,24 +808,27 @@ else:
 gate = None
 if lora_metrics:
     comparisons = {
-        "majority": majority_baseline["accuracy"],
-        "tfidf_text": text_baseline["accuracy"],
+        "median_3y_return": median_baseline["mae"],
+        "tfidf_text_3y_return": text_baseline["mae"],
     }
     if base_metrics:
-        comparisons["base_model"] = base_metrics["accuracy"]
-    best_name, best_accuracy = max(comparisons.items(), key=lambda item: item[1])
+        comparisons["base_model"] = base_metrics["mae"]
+    best_name, best_mae = min(comparisons.items(), key=lambda item: item[1])
     gate = {
         "training_profile": TRAINING_PROFILE,
-        "expected_test_rows": 835,
-        "finetuned_accuracy": lora_metrics["accuracy"],
+        "expected_test_rows": len(dataset["test"]),
+        "finetuned_mae": lora_metrics["mae"],
+        "finetuned_rmse": lora_metrics["rmse"],
+        "finetuned_mean_abs_log_error": lora_metrics["mean_abs_log_error"],
+        "finetuned_bucket_accuracy": lora_metrics["bucket_accuracy"],
         "finetuned_scored": lora_metrics["scored"],
-        "finetuned_long_accuracy": lora_metrics["by_direction"]["long"]["accuracy"],
-        "finetuned_short_accuracy": lora_metrics["by_direction"]["short"]["accuracy"],
+        "finetuned_long_mae": lora_metrics["by_direction"]["long"]["mae"],
+        "finetuned_short_mae": lora_metrics["by_direction"]["short"]["mae"],
         "best_comparison": best_name,
-        "best_comparison_accuracy": best_accuracy,
-        "beats_best_comparison": lora_metrics["accuracy"] > best_accuracy,
-        "full_test_set": lora_metrics["scored"] == 835,
-        "pass": lora_metrics["scored"] == 835 and lora_metrics["accuracy"] > best_accuracy,
+        "best_comparison_mae": best_mae,
+        "beats_best_comparison": lora_metrics["mae"] < best_mae,
+        "full_test_set": lora_metrics["scored"] == len(dataset["test"]),
+        "pass": lora_metrics["scored"] == len(dataset["test"]) and lora_metrics["mae"] < best_mae,
     }
     with open("finetune_gate.json", "w", encoding="utf-8") as handle:
         json.dump(gate, handle, indent=2, sort_keys=True)
@@ -629,7 +875,7 @@ Private dataset repo:
 ## Evaluation Gate
 
 The model is useful only if it scores the full held-out test set and beats the
-best available comparison baseline.
+best available comparison baseline on 3-year direction-adjusted return MAE.
 
 ```json
 {json.dumps(gate, indent=2, sort_keys=True) if gate else "null"}

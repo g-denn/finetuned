@@ -37,7 +37,8 @@ Dataset rows contain:
 - long/short direction
 - company/security metadata
 - validated raw performance multipliers
-- direction-adjusted outcome labels
+- direction-adjusted 3-year return targets
+- derived outcome labels
 
 ## Intended Use
 
@@ -54,14 +55,12 @@ the sole basis for live investment decisions.
 ## Evaluation Gate
 
 Before considering the adapter useful, run it on the held-out test set and
-compare against the majority-class baseline:
+compare against the median-return and TF-IDF/Ridge text baselines computed in
+the Colab notebook.
 
-- majority baseline test accuracy: 29.70%
-- long baseline accuracy: 30.57%
-- short baseline accuracy: 28.75%
-
-The adapter should beat this baseline and should be checked separately on long
-and short ideas.
+The primary metric is 3-year direction-adjusted return MAE. Bucket accuracy is
+kept as a secondary sanity check and should be reviewed separately for long and
+short ideas.
 
 ## Privacy
 
