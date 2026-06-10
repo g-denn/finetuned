@@ -51,7 +51,7 @@ DO_TRAINER_VALIDATION = False
 # locally and pushed to the private adapter repo on Hugging Face.
 ENABLE_HUB_CHECKPOINTS = True
 RESUME_FROM_HUB_CHECKPOINT = True
-CHECKPOINT_SAVE_STEPS = 25
+CHECKPOINT_SAVE_STEPS = 10
 
 # Use 200 for the first end-to-end smoke test. Set this to None for the real
 # proof run over all 4,778 training rows with 3-year return targets.
@@ -758,6 +758,7 @@ if DO_TRAIN:
             save_strategy="steps",
             save_steps=CHECKPOINT_SAVE_STEPS,
             save_total_limit=3,
+            save_only_model=False,
             optim="adamw_8bit",
             weight_decay=0.01,
             lr_scheduler_type="linear",
@@ -767,7 +768,9 @@ if DO_TRAIN:
             hub_model_id=ADAPTER_REPO if ENABLE_HUB_CHECKPOINTS else None,
             hub_private_repo=True,
             hub_strategy="checkpoint",
+            hub_always_push=True,
             hub_token=os.environ["HF_TOKEN"],
+            restore_callback_states_from_checkpoint=True,
         ),
     )
     resume_checkpoint = prepare_resume_checkpoint()
