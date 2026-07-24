@@ -1,0 +1,37 @@
+{
+  "accuracy": 0.15,
+  "by_direction": {
+    "long": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "scored": 12
+    },
+    "short": {
+      "accuracy": 0.375,
+      "correct": 3,
+      "scored": 8
+    }
+  },
+  "confusion": {
+    "excellent": {
+      "excellent": 3
+    },
+    "failed": {
+      "excellent": 5
+    },
+    "good": {
+      "excellent": 3
+    },
+    "neutral": {
+      "excellent": 3
+    },
+    "poor": {
+      "excellent": 6
+    }
+  },
+  "correct": 3,
+  "limit": 20,
+  "missing": 0,
+  "rows": 20,
+  "scored": 20
+}

@@ -1,0 +1,16 @@
+{
+  "bucket_accuracy": 0.0,
+  "bucket_correct": 0,
+  "bucket_scored": 0,
+  "by_direction": {},
+  "confusion": {},
+  "mae": 0.0,
+  "mean_abs_log_error": 0.0,
+  "missing_gold_3y": 0,
+  "missing_prediction": 0,
+  "provided_outcome_accuracy": 0.0,
+  "provided_outcome_scored": 0,
+  "rmse": 0.0,
+  "scored": 0,
+  "unknown_id": 20
+}

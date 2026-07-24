@@ -25,6 +25,7 @@ TRAINING_CSV = ROOT / "eodhd_output" / "full_run" / "training_ready_after_sec_ya
 SQL_DUMP = ROOT / "VIC_IDEAS.sql"
 OUT_DIR = ROOT / "data" / "processed"
 REPORTS_DIR = ROOT / "reports"
+DIRECTION_OVERRIDES_PATH = ROOT / "idea_direction_overrides.json"
 
 HORIZONS = ("1y", "3y", "5y", "10y", "20y")
 PRIMARY_HORIZON_ORDER = ("3y", "5y", "1y", "10y", "20y")
@@ -153,6 +154,13 @@ def parse_float(value: str | None) -> float | None:
     return parsed
 
 
+def read_direction_overrides() -> dict[str, dict[str, Any]]:
+    if not DIRECTION_OVERRIDES_PATH.exists():
+        return {}
+    with DIRECTION_OVERRIDES_PATH.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
 def outcome_bucket(multiplier: float | None) -> str:
     if multiplier is None:
         return "missing"
@@ -261,6 +269,7 @@ def build() -> None:
 
     descriptions, catalysts, ideas = parse_copy_sections(SQL_DUMP)
     training_rows = read_training_rows()
+    direction_overrides = read_direction_overrides()
 
     canonical: list[dict[str, Any]] = []
     missing_description = 0
@@ -271,6 +280,9 @@ def build() -> None:
         if not meta:
             missing_idea_meta += 1
             continue
+
+        override = direction_overrides.get(idea_id)
+        is_short = bool(override.get("is_short")) if override else meta.is_short
 
         description = clean_text(descriptions.get(idea_id))
         catalyst = clean_text(catalysts.get(idea_id))
@@ -283,7 +295,7 @@ def build() -> None:
             "eodhd_symbol": row.get("eodhd_symbol", ""),
             "company_name": row.get("fundamentals_name") or row.get("raw_symbol", ""),
             "publication_date": row.get("publication_date") or meta.publication_date,
-            "is_short": meta.is_short,
+            "is_short": is_short,
             "is_contest_winner": meta.is_contest_winner,
             "link": meta.link,
             "author_user_id": meta.user_id,
@@ -300,7 +312,7 @@ def build() -> None:
         }
         for horizon in HORIZONS:
             raw = parse_float(row.get(f"validated_perf_{horizon}"))
-            directional = (1 / raw if meta.is_short and raw else raw) if raw is not None else None
+            directional = (1 / raw if is_short and raw else raw) if raw is not None else None
             item[f"raw_perf_{horizon}"] = raw
             item[f"directional_perf_{horizon}"] = directional
             item[f"outcome_{horizon}"] = outcome_bucket(directional)

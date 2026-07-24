@@ -1,0 +1,21 @@
+{
+  "accuracy": 0.0,
+  "by_direction": {
+    "long": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "scored": 0
+    },
+    "short": {
+      "accuracy": 0.0,
+      "correct": 0,
+      "scored": 0
+    }
+  },
+  "confusion": {},
+  "correct": 0,
+  "limit": 20,
+  "missing": 20,
+  "rows": 20,
+  "scored": 0
+}

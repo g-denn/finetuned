@@ -5,8 +5,8 @@
 - SFT rows with 3y return target: 5973
 - Missing idea metadata skipped: 0
 - Missing descriptions before filtering: 12
-- Long ideas: 3655
-- Short ideas: 4686
+- Long ideas: 6187
+- Short ideas: 2154
 
 ## Time-Based Splits
 
@@ -24,11 +24,11 @@
 
 ## Primary Outcome Counts
 
-- excellent: 845
-- failed: 1121
-- good: 1651
-- neutral: 2475
-- poor: 2249
+- excellent: 823
+- failed: 1097
+- good: 2044
+- neutral: 2630
+- poor: 1747
 
 ## Outputs
 

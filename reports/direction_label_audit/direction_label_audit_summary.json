@@ -1,0 +1,43 @@
+{
+  "audit_csv": "C:\\Users\\Dell\\finetuned\\reports\\direction_label_audit\\direction_label_audit.csv",
+  "confidence_counts": {
+    "high": 1641,
+    "low": 4260,
+    "medium": 1713,
+    "none": 727
+  },
+  "confirmed_current_label_rows": 325,
+  "current_short_rows": 2154,
+  "explicit_direction_counts": {
+    "conflict": 4,
+    "long": 547,
+    "none": 7480,
+    "short": 310
+  },
+  "explicit_mismatch_current_rows": 9,
+  "explicit_mismatch_source_rows": 315,
+  "high_confidence_auto_override_candidates": 0,
+  "inferred_direction_counts": {
+    "ambiguous": 261,
+    "long": 6130,
+    "short": 1223,
+    "unknown": 727
+  },
+  "mismatch_current_rows": 957,
+  "mismatch_source_rows": 3438,
+  "quality_flagged_rows": 132,
+  "review_queue_csv": "C:\\Users\\Dell\\finetuned\\reports\\direction_label_audit\\direction_review_queue.csv",
+  "review_queue_rows": 4754,
+  "source_short_rows": 4686,
+  "strict_direction_counts": {
+    "conflict": 4,
+    "long": 465,
+    "none": 7630,
+    "short": 242
+  },
+  "strict_mismatch_current_rows": 0,
+  "strict_mismatch_source_rows": 264,
+  "suggested_overrides_json": "C:\\Users\\Dell\\finetuned\\reports\\direction_label_audit\\suggested_direction_overrides_high_confidence.json",
+  "total_rows": 8341,
+  "unconfirmed_mismatch_current_rows": 634
+}

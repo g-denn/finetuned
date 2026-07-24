@@ -24,3 +24,23 @@ eodhd_output/**/raw_cache_sample.json
 
 # Supabase local link/runtime metadata
 supabase/.temp/
+
+# Reproducible local tooling
+.codex_deps/
+*.pid
+
+# Large dataset mirrors already preserved in private Hugging Face datasets.
+# Keep the upload status manifests in eodhd_output/ tracked as restore evidence.
+dist/eodhd_dataset_financial_pull.zip
+eodhd_output/alpha_vantage_transcripts/
+eodhd_output/dataset_financial_pull/
+eodhd_output/japan_korea_fundamentals/
+eodhd_output/japan_korea_fundamentals_fixture/
+eodhd_output/public_transcript_sources/
+eodhd_output/raw_vic_public_transcript_companion/
+eodhd_output/vic_pitch_financial_context/
+eodhd_output/vic_pitch_financial_context_clean_hf_stage/
+eodhd_output/vic_pitch_financial_context_hf_stage/
+eodhd_output/vic_pitch_financial_context_repaired_clean_hf_stage/
+eodhd_output/vic_pitch_financial_context_repaired_clean_transcripts_hf_stage/
+eodhd_output/vic_pitch_financial_context_transcript_enriched_hf_stage/

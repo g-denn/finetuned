@@ -1,0 +1,206 @@
+{
+  "546f46c9-961d-48bb-ba56-29fbb87c1ed3": {
+    "flagged_at_utc": "2026-06-12T12:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to PD/PagerDuty, but the thesis text recommends purchasing PDS/Precision Drilling Corporation.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "6cbbaf41-eaeb-46fd-9366-257f429a7563": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MCR/MFS Charter Income Trust, but the thesis text describes a Canadian operating company with oil and gas customer exposure, not the named income trust.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "6d3b6377-8a8a-409a-bdc4-731acf1bf685": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to GNC/GNC Holdings, but the thesis text is about Greencore.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "2b9569e7-65c2-43fa-be29-717d3dc726ed": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to EAS/Energy East, but the thesis text describes Energy Assets (EA), a UK gas metering business.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "6e92c525-a311-4d4d-a4f9-d844a39c76a5": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TSCO/Tractor Supply, but the thesis text is about Tesco PLC and uses GBP figures.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "e485b26e-b728-4d8a-a455-bdf78553761b": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to GNC/GNC Holdings, but the thesis text is about Greencore.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "0158fddc-94a5-4c11-8680-fe30f7123347": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TRE/Trencor, but the thesis text is about Trading Emissions Plc (TRE LN), a liquidating trust.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "bf66e6cb-c1b3-4f4c-80cf-5278a8d76973": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to OR/Osisko Gold Royalties, but the thesis text recommends purchasing shares of L'Oreal.",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "9986d279-b797-498f-b419-c904d5aeb3f1": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MWE/MarkWest Energy Partners, but the thesis text describes Mawson West, a copper miner.",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "b4cca442-53d1-4ae9-8a08-f8ac9a1c9fc3": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CSU/Capital Senior Living, but the thesis text is about Constellation Software (CSU CN).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "b68cf9ee-6d4e-4307-98bd-e2506c444a05": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CSU/Capital Senior Living, but the thesis text is about Constellation Software (CSU CN).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "e0f236d6-f605-4ed3-83de-7f9cede14472": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to EPR/EPR Properties, but the thesis text is about Europris (EPR NO Equity).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "bebd153b-6de4-4ff1-806e-eefbfc8bf50e": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TRS/TriMas, but the thesis text describes Tarsus, a trade show operator.",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "042c9ab7-a825-4c1e-a6b7-e456fae3bd9e": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to WEB/Web.com, but the thesis text is about Westbridge Energy (WEB CN).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "2713a763-f8d3-43e4-ada9-be8523bb0621": {
+    "flagged_at_utc": "2026-06-12T15:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to NILE/BitNile Holdings in current metadata, but the thesis text is about Blue Nile, the historical NASDAQ:NILE online jeweler.",
+    "source": "manual_thesis_direction_review_packet_005"
+  },
+  "ef3964a7-d0b4-4253-a626-ed215b255e0c": {
+    "flagged_at_utc": "2026-06-12T15:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to SSI/Stage Stores, but the thesis text is about SpectraSite Communications, a post-bankruptcy cellular tower company.",
+    "source": "manual_thesis_direction_review_packet_005"
+  },
+  "03f4f0f2-f688-433d-b08a-bfa441e3f6bd": {
+    "flagged_at_utc": "2026-06-12T15:05:00+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to ASCMA common equity, but the thesis recommends buying Monitronics 9.125% OpCo senior notes due 2020.",
+    "source": "manual_thesis_direction_review_packet_005"
+  },
+  "94967368-7cd4-44c6-be25-941aa29e295e": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TRST/TrustCo Bank Corp NY, but the thesis text is about Trustpilot.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "428a9c87-60cc-4320-8980-14ef0c42e902": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ICL/Israel Chemicals, but the thesis text is about Itasca Capital (ICL:CV/ICLTF).",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "d7a11bea-51a6-41f8-ac3c-172ee3df08c2": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TEN/Tsakos Energy Navigation, but the thesis text is about Tenneco.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "28246844-fd14-42ec-af40-6a8abe0f3243": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to SCS/Steelcase, but the thesis text says SCS is a Vietnamese cargo support operator at Tan Son Nhat airport.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "df1494b9-7561-4d2f-a4f7-431c0b8f4b9a": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ENX/Eaton Vance New York MBF, but the thesis text is about Euronext.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "464b1f61-4aca-458c-8b8f-090b9f720a67": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ENX/Eaton Vance New York MBF, but the thesis text is about enX Group in South Africa.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "0a2d8f0a-ba90-4509-a3a0-730151ac757b": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to LSI/Life Storage, but the thesis text is about LSI Logic and its pending merger with Agere Systems.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "a14fa56b-8c0b-44df-a9a5-2b5bbb72dbaf": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to NILE/BitNile Holdings in current metadata, but the thesis text is about Blue Nile, the historical NASDAQ:NILE online jeweler.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "7126b83e-cdf5-41a3-8324-50be3cbeba02": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to DCI/Donaldson Company, but the thesis text is about Dolphin Capital/Dolphin, a Greek resort property developer.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "665c63ac-089d-4bc5-80fb-e7422d22ae07": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MAS/Masco Corporation, but the thesis text is about Masonite Worldwide Holdings (MASWF), a door manufacturer.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "18d6ef64-c114-4c79-8824-3b216d2c6a4c": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to SBAC common equity, but the thesis recommends SBAC bonds as the investable security.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "b4337e79-0c70-44a8-9b4c-b9af7803997b": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CCU/Compania Cervecerias Unidas ADR, but the thesis text is about Constellation Copper.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "be3754ee-1951-434d-a1cd-1bf7f106f800": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to current WTW/Willis Towers Watson metadata, but the thesis text is Weight Watchers International, the historical NYSE:WTW security.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "58bac334-bf2b-49db-bca8-3a0a981c29f8": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to XMSR common equity, but the thesis recommends XM Satellite Radio senior secured notes/bonds.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "c21e7279-b4c0-4dc4-acd9-58c4edb429c5": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Y/Alleghany Corporation, but the thesis text is about Yellow Media.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "19745ee7-afa2-4683-98dc-efab6bbd6cf4": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to BRE Properties, but the thesis text is about Brookfield Real Estate Services.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "bd2dcea2-ac93-4ed8-bccf-14e1bbeb48aa": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "mixed_strategy_direction_ambiguous",
+    "reason": "ADT thesis primarily describes an odd-lot tender buy/tender trade, but also notes a conditional outright short if shares approach $9.",
+    "source": "manual_thesis_direction_review_packet_008"
+  }
+}

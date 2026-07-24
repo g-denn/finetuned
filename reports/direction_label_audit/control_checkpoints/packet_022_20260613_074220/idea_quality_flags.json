@@ -1,0 +1,572 @@
+{
+  "0158fddc-94a5-4c11-8680-fe30f7123347": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TRE/Trencor, but the thesis text is about Trading Emissions Plc (TRE LN), a liquidating trust.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "039a9188-a23a-48e6-978d-c20cf94347d6": {
+    "flagged_at_utc": "2026-06-12T22:14:45+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "Thesis row is ROO and the row direction is short Deliveroo, but the complete trade is a pair: long Takeaway/TKWY against short ROO.",
+    "source": "manual_thesis_direction_review_packet_019"
+  },
+  "03f4f0f2-f688-433d-b08a-bfa441e3f6bd": {
+    "flagged_at_utc": "2026-06-12T15:05:00+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to ASCMA common equity, but the thesis recommends buying Monitronics 9.125% OpCo senior notes due 2020.",
+    "source": "manual_thesis_direction_review_packet_005"
+  },
+  "042c9ab7-a825-4c1e-a6b7-e456fae3bd9e": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to WEB/Web.com, but the thesis text is about Westbridge Energy (WEB CN).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "093dfa72-d90c-4b46-bbd7-aebe137e03af": {
+    "flagged_at_utc": "2026-06-12T19:30:50+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to BTU common equity, but the thesis recommends Peabody?s term loan/debt instrument.",
+    "source": "manual_thesis_direction_review_packet_013"
+  },
+  "0a2d8f0a-ba90-4509-a3a0-730151ac757b": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to LSI/Life Storage, but the thesis text is about LSI Logic and its pending merger with Agere Systems.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "1406d1a8-46f8-4b49-b405-cee21be56112": {
+    "flagged_at_utc": "2026-06-12T20:23:47+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "Thesis row is PHYS and the primary recommendation is buying PHYS, but the arbitrage is fully hedged against GLD/gold futures.",
+    "source": "manual_thesis_direction_review_packet_015"
+  },
+  "16ed6460-e9d0-495b-89da-dac7ee6737cb": {
+    "flagged_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "Thesis row is FPAC and the primary recommendation owns FPAC outright, but the memo also discusses short MSTR as an optional hedge/pair leg.",
+    "source": "manual_thesis_direction_review_packet_010"
+  },
+  "18d6ef64-c114-4c79-8824-3b216d2c6a4c": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to SBAC common equity, but the thesis recommends SBAC bonds as the investable security.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "19745ee7-afa2-4683-98dc-efab6bbd6cf4": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to BRE Properties, but the thesis text is about Brookfield Real Estate Services.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "1b733f37-2d5f-4136-8949-3cfb0d9c8a88": {
+    "flagged_at_utc": "2026-06-12T19:30:50+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to VivoPower PLC, but the thesis text is about Meridian Bioscience, the historical VIVO ticker.",
+    "source": "manual_thesis_direction_review_packet_013"
+  },
+  "1f4bd7ad-75dc-4fe3-8e35-3df2d329908e": {
+    "flagged_at_utc": "2026-06-12T22:45:10+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to The Oncology Institute, but the thesis text is about Topicus.com, the Constellation Software spin-off.",
+    "source": "manual_thesis_direction_review_packet_020"
+  },
+  "22ce2f1d-b02c-4406-8805-4735f3d784f1": {
+    "flagged_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MT/ArcelorMittal, but the thesis text is about Mettrum, a Canadian medical marijuana licensed producer.",
+    "source": "manual_thesis_direction_review_packet_011"
+  },
+  "23214db4-ed6b-4cf8-9baa-41f1e8893fc9": {
+    "flagged_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MM/Millennial Media, but the thesis text is about Mood Media, a TSX-listed in-store media company.",
+    "source": "manual_thesis_direction_review_packet_011"
+  },
+  "266115d4-1335-4bf3-bdd1-218a1842ceac": {
+    "flagged_at_utc": "2026-06-12T22:45:10+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to OneSmart International Education Group, but the thesis text is about Higher One Holdings payment/refund disbursement services.",
+    "source": "manual_thesis_direction_review_packet_020"
+  },
+  "2713a763-f8d3-43e4-ada9-be8523bb0621": {
+    "flagged_at_utc": "2026-06-12T15:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to NILE/BitNile Holdings in current metadata, but the thesis text is about Blue Nile, the historical NASDAQ:NILE online jeweler.",
+    "source": "manual_thesis_direction_review_packet_005"
+  },
+  "28246844-fd14-42ec-af40-6a8abe0f3243": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to SCS/Steelcase, but the thesis text says SCS is a Vietnamese cargo support operator at Tan Son Nhat airport.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "2a486d71-657b-4799-9aef-a31cdf11417b": {
+    "flagged_at_utc": "2026-06-12T17:44:36+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to RRX/Regal Beloit, but the thesis text is about Raging River Exploration (RRX CN).",
+    "source": "manual_thesis_direction_review_packet_009"
+  },
+  "2ac4b452-c274-4f3b-9ece-80041589610f": {
+    "flagged_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to WM/Waste Management, but the thesis text is about Washington Mutual, the historical thrift/bank.",
+    "source": "manual_thesis_direction_review_packet_011"
+  },
+  "2b9569e7-65c2-43fa-be29-717d3dc726ed": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to EAS/Energy East, but the thesis text describes Energy Assets (EA), a UK gas metering business.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "35cfaebe-ea71-4989-82e9-f9430b23107c": {
+    "flagged_at_utc": "2026-06-12T20:23:47+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to WTI common equity, but the primary recommendation is buying WTI 9.75% senior notes due 2023.",
+    "source": "manual_thesis_direction_review_packet_015"
+  },
+  "3b9202d5-f12b-4285-940b-b2ed2ae59efe": {
+    "flagged_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MIC/Macquarie Infrastructure, but the thesis text is about Genworth Mortgage Insurance.",
+    "source": "manual_thesis_direction_review_packet_010"
+  },
+  "428a9c87-60cc-4320-8980-14ef0c42e902": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ICL/Israel Chemicals, but the thesis text is about Itasca Capital (ICL:CV/ICLTF).",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "43e91bfc-cba0-4f6f-a9f5-a41606633040": {
+    "flagged_at_utc": "2026-06-12T19:56:37+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to SFE/Safeguard Scientifics, but the thesis text is about Safestyle UK PLC.",
+    "source": "manual_thesis_direction_review_packet_014"
+  },
+  "464b1f61-4aca-458c-8b8f-090b9f720a67": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ENX/Eaton Vance New York MBF, but the thesis text is about enX Group in South Africa.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "46fda227-90c3-451d-97e3-bc5b9a9ba15b": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "mixed_strategy_optional_hedge",
+    "reason": "Thesis row is Zillow/Z and the primary recommendation is long Zillow after the iBuying exit, but the risks section mentions short OPEN as a hedge if housing weakens.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "5281e1c8-75d6-4841-976e-0cae32e52aec": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "Thesis row is CP and the primary row direction is long Canadian Pacific, but the complete relative trade is long CP against short UPS.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "546f46c9-961d-48bb-ba56-29fbb87c1ed3": {
+    "flagged_at_utc": "2026-06-12T12:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to PD/PagerDuty, but the thesis text recommends purchasing PDS/Precision Drilling Corporation.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "55720ac3-29af-4d23-8751-5cc6dea9d9ff": {
+    "flagged_at_utc": "2026-06-12T20:23:47+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "Thesis row is VWAPY and the primary leg is long Volkswagen preferred ADR, but the trade pairs it with a short VWAGY ordinary ADR leg.",
+    "source": "manual_thesis_direction_review_packet_015"
+  },
+  "55940ec3-b0b1-4dc8-bf57-c0f81cb1f0e3": {
+    "flagged_at_utc": "2026-06-12T19:56:37+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "Thesis row is OCR and the primary recommendation is long Omnicare, but the memo also recommends short PMC/PharMerica as a hedge pair leg.",
+    "source": "manual_thesis_direction_review_packet_014"
+  },
+  "58bac334-bf2b-49db-bca8-3a0a981c29f8": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to XMSR common equity, but the thesis recommends XM Satellite Radio senior secured notes/bonds.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "5a3a8228-16f7-4f75-81c2-23d730137d7b": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Regional Management Corp, but the thesis text is about RM plc, a UK education company.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "5da150c6-3c8b-4876-b513-451a66eae7b8": {
+    "flagged_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to BBI/Brickell Biotech in current metadata, but the thesis text is about Blockbuster, the historical BBI security.",
+    "source": "manual_thesis_direction_review_packet_011"
+  },
+  "608988c3-3df6-4726-9767-109e6287b328": {
+    "flagged_at_utc": "2026-06-12T17:44:36+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ADI/Analog Devices, but the thesis text describes a South African software roll-up, likely the historical ADI local listing rather than Analog Devices.",
+    "source": "manual_thesis_direction_review_packet_009"
+  },
+  "613053c0-0cfe-4782-b253-077844124151": {
+    "flagged_at_utc": "2026-06-12T17:44:36+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CCU/Compania Cervecerias Unidas ADR, but the thesis text is about the Clear Channel Radio stub.",
+    "source": "manual_thesis_direction_review_packet_009"
+  },
+  "665c63ac-089d-4bc5-80fb-e7422d22ae07": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MAS/Masco Corporation, but the thesis text is about Masonite Worldwide Holdings (MASWF), a door manufacturer.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "66df74ed-5852-47e4-966d-71ea5510d5e0": {
+    "flagged_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to PED/PEDEVCO, but the thesis text is about SmartPros, an accredited education provider.",
+    "source": "manual_thesis_direction_review_packet_011"
+  },
+  "6a76e51f-12db-428d-89d3-7a3e06b28548": {
+    "flagged_at_utc": "2026-06-12T20:51:02+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to AWI/Armstrong World Industries, but the thesis text is about Advent Wireless, a Canadian Rogers/Fido wireless dealer.",
+    "source": "manual_thesis_direction_review_packet_016"
+  },
+  "6cbbaf41-eaeb-46fd-9366-257f429a7563": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MCR/MFS Charter Income Trust, but the thesis text describes a Canadian operating company with oil and gas customer exposure, not the named income trust.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "6d18e0f2-c060-40ac-bec6-0df011d8b233": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "direction_text_disclosure_conflict",
+    "reason": "POWI thesis text is bearish and values the stock materially lower, but a copied disclaimer says the author currently holds a long position in the security.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "6d1b432d-4fdf-42cd-bf74-475b7819d5c4": {
+    "flagged_at_utc": "2026-06-12T20:23:47+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "FVRR is the short leg of a pair trade that also recommends long UPWK.",
+    "source": "manual_thesis_direction_review_packet_015"
+  },
+  "6d3b6377-8a8a-409a-bdc4-731acf1bf685": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to GNC/GNC Holdings, but the thesis text is about Greencore.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "6e92c525-a311-4d4d-a4f9-d844a39c76a5": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TSCO/Tractor Supply, but the thesis text is about Tesco PLC and uses GBP figures.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "7126b83e-cdf5-41a3-8324-50be3cbeba02": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to DCI/Donaldson Company, but the thesis text is about Dolphin Capital/Dolphin, a Greek resort property developer.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "7a03eaab-5038-4aba-a5dd-a6aac690af63": {
+    "flagged_at_utc": "2026-06-12T22:14:45+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to IO common equity, but the thesis recommends ION Geophysical 9.125% second-lien notes due 2021.",
+    "source": "manual_thesis_direction_review_packet_019"
+  },
+  "8390cb7d-85c4-4506-b9e1-f0792339e76f": {
+    "flagged_at_utc": "2026-06-12T20:51:02+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to UI/Ubiquiti, but the thesis text is about Urbanimmersive (UI.V), a Canadian real-estate SaaS/3D-tour company.",
+    "source": "manual_thesis_direction_review_packet_016"
+  },
+  "841631ac-84d2-488b-be69-e678b6c9b3a3": {
+    "flagged_at_utc": "2026-06-12T21:20:27+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CLH/Clean Harbors, but the thesis text is about Collection House Ltd (ASX: CLH), an Australian debt collection company.",
+    "source": "manual_thesis_direction_review_packet_017"
+  },
+  "85af1d59-d7f9-4564-9eab-0a7a3b58b66d": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Frequency Electronics, but the thesis text is about WisdomTree Investments / WSDT ETF sponsorship.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "8e7ea539-a479-452f-9be7-f2989e1a83f6": {
+    "flagged_at_utc": "2026-06-12T22:14:45+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to GC.US/ambiguous GC metadata, but the thesis text is about Great Canadian Gaming/Great Canadian, the Canadian casino operator.",
+    "source": "manual_thesis_direction_review_packet_019"
+  },
+  "94967368-7cd4-44c6-be25-941aa29e295e": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TRST/TrustCo Bank Corp NY, but the thesis text is about Trustpilot.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "9665bb77-c8c7-4029-90ad-91b16bf7aacf": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "mixed_strategy_optional_hedge",
+    "reason": "Thesis row is BP and the primary recommendation is long BP, but the memo mentions optionally shorting Rosneft against the BP position to reduce oil exposure.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "9894930b-5e78-4bcf-a989-d1fdea931310": {
+    "flagged_at_utc": "2026-06-12T19:56:37+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to NK/NantKwest, but the thesis text is about Imerys, the French specialty minerals company.",
+    "source": "manual_thesis_direction_review_packet_014"
+  },
+  "9986d279-b797-498f-b419-c904d5aeb3f1": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MWE/MarkWest Energy Partners, but the thesis text describes Mawson West, a copper miner.",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "9bf743fa-3179-4523-93b7-42f9d8f6f3b1": {
+    "flagged_at_utc": "2026-06-12T21:46:47+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Tsakos Energy Navigation, but the thesis text is about Tenneco, the historical TEN ticker.",
+    "source": "manual_thesis_direction_review_packet_018"
+  },
+  "a14fa56b-8c0b-44df-a9a5-2b5bbb72dbaf": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to NILE/BitNile Holdings in current metadata, but the thesis text is about Blue Nile, the historical NASDAQ:NILE online jeweler.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "a31bd096-89a5-4bf0-8f11-4283ec415a36": {
+    "flagged_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to NNN REIT, but the thesis text is about Nimin Energy, an oil producer using ticker NNN in the memo.",
+    "source": "manual_thesis_direction_review_packet_012"
+  },
+  "a53a6806-2241-4065-a0fb-f035d28fe3e4": {
+    "flagged_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to FN/Fabrinet, but the thesis text is about First National Financial Corporation, Canada's non-bank mortgage originator/servicer.",
+    "source": "manual_thesis_direction_review_packet_010"
+  },
+  "a651d803-3911-432a-bfd5-1fd0c2bea5f5": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Autoliv, but the thesis text is about Allianz after Bill Gross left PIMCO.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "a75ed37b-4d49-4378-936c-b41ea7406371": {
+    "flagged_at_utc": "2026-06-12T17:44:36+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CIX/CompX International, but the thesis text is about CI Financial Corp, a Canadian wealth/asset manager.",
+    "source": "manual_thesis_direction_review_packet_009"
+  },
+  "af921c81-54cb-4c7c-aedd-2ab684b5701c": {
+    "flagged_at_utc": "2026-06-12T19:30:50+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to AEP/American Electric Power, but the thesis text is about Anglo Eastern Plantations, a UK-listed palm oil plantation owner.",
+    "source": "manual_thesis_direction_review_packet_013"
+  },
+  "b04929e9-9a21-419d-a0ac-9fd2a70d55eb": {
+    "flagged_at_utc": "2026-06-12T17:44:36+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ABT/Abbott Laboratories, but the thesis text is about Absolute Software.",
+    "source": "manual_thesis_direction_review_packet_009"
+  },
+  "b4337e79-0c70-44a8-9b4c-b9af7803997b": {
+    "flagged_at_utc": "2026-06-12T16:34:51+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CCU/Compania Cervecerias Unidas ADR, but the thesis text is about Constellation Copper.",
+    "source": "manual_thesis_direction_review_packet_007"
+  },
+  "b4c34345-d8ee-4548-b8bb-088c2d141b03": {
+    "flagged_at_utc": "2026-06-12T22:45:10+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to DHI Group, but the thesis text is about DHX Media, the children's content company.",
+    "source": "manual_thesis_direction_review_packet_020"
+  },
+  "b4cca442-53d1-4ae9-8a08-f8ac9a1c9fc3": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CSU/Capital Senior Living, but the thesis text is about Constellation Software (CSU CN).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "b4eb083f-b802-4921-a8cb-6b70714fa8b2": {
+    "flagged_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to P/Everpure in current metadata, but the thesis text is about Pandora Media, the historical NYSE:P security.",
+    "source": "manual_thesis_direction_review_packet_012"
+  },
+  "b68cf9ee-6d4e-4307-98bd-e2506c444a05": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CSU/Capital Senior Living, but the thesis text is about Constellation Software (CSU CN).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "b9c32e9c-1faf-4119-a027-0e6822b84452": {
+    "flagged_at_utc": "2026-06-12T22:45:10+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Life Storage, but the thesis text is about LSI Logic, a fabless semiconductor company.",
+    "source": "manual_thesis_direction_review_packet_020"
+  },
+  "bd2dcea2-ac93-4ed8-bccf-14e1bbeb48aa": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "mixed_strategy_direction_ambiguous",
+    "reason": "ADT thesis primarily describes an odd-lot tender buy/tender trade, but also notes a conditional outright short if shares approach $9.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "be3754ee-1951-434d-a1cd-1bf7f106f800": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to current WTW/Willis Towers Watson metadata, but the thesis text is Weight Watchers International, the historical NYSE:WTW security.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "be9e8643-b2a9-40f3-beae-ab122f5f7d15": {
+    "flagged_at_utc": "2026-06-12T20:51:02+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to MMT/MFS Multimarket Income Trust, but the thesis text is about Mart Resources, a Nigerian oil producer.",
+    "source": "manual_thesis_direction_review_packet_016"
+  },
+  "bebd153b-6de4-4ff1-806e-eefbfc8bf50e": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TRS/TriMas, but the thesis text describes Tarsus, a trade show operator.",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "bf66e6cb-c1b3-4f4c-80cf-5278a8d76973": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to OR/Osisko Gold Royalties, but the thesis text recommends purchasing shares of L'Oreal.",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "c1243cb1-9afa-476c-9147-ad1becbc5683": {
+    "flagged_at_utc": "2026-06-12T21:46:47+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Willis Towers Watson, but the thesis text is about Weight Watchers International, the historical WTW ticker, after the Oprah Winfrey investment.",
+    "source": "manual_thesis_direction_review_packet_018"
+  },
+  "c21e7279-b4c0-4dc4-acd9-58c4edb429c5": {
+    "flagged_at_utc": "2026-06-12T17:21:12+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Y/Alleghany Corporation, but the thesis text is about Yellow Media.",
+    "source": "manual_thesis_direction_review_packet_008"
+  },
+  "c2c5ec77-00e0-4738-9b0e-c3abdf8122bc": {
+    "flagged_at_utc": "2026-06-12T22:14:45+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Y/Alleghany Corporation, but the thesis text is about Yellow Media, the historical Y ticker after recapitalization.",
+    "source": "manual_thesis_direction_review_packet_019"
+  },
+  "c42ae9d3-7e40-40f5-ac9a-13fc47084077": {
+    "flagged_at_utc": "2026-06-12T21:46:47+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Ardagh Group, but the thesis text is about Armada Data (ARD on TSX Venture).",
+    "source": "manual_thesis_direction_review_packet_018"
+  },
+  "c6cc252c-3a06-4c2c-bab2-0d27767f74dd": {
+    "flagged_at_utc": "2026-06-12T19:56:37+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to JCP common equity, but the primary recommendation is buying JCP 5.65% bonds due June 1, 2020.",
+    "source": "manual_thesis_direction_review_packet_014"
+  },
+  "c7be6fa4-820d-4a6b-993f-936a11102261": {
+    "flagged_at_utc": "2026-06-12T21:20:27+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Aya Gold & Silver, but the thesis text is about Amaya (AYA CN), the gaming technology company.",
+    "source": "manual_thesis_direction_review_packet_017"
+  },
+  "cb6ba772-1d0c-4279-b958-8d0fd1ad59b1": {
+    "flagged_at_utc": "2026-06-12T21:46:47+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to HighPoint Resources, but the thesis text is about Billabong, the historical BBG ticker.",
+    "source": "manual_thesis_direction_review_packet_018"
+  },
+  "ce316d17-5fa0-46ba-9189-f950ba22a373": {
+    "flagged_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to JET/Jetronic Industries, but the thesis text is about Just Eat Takeaway.",
+    "source": "manual_thesis_direction_review_packet_010"
+  },
+  "ceb2e096-c6c2-474f-85f4-5cd18718e286": {
+    "flagged_at_utc": "2026-06-12T20:23:47+00:00",
+    "issue": "mixed_strategy_pair_trade",
+    "reason": "DIS is the short leg of a pair trade that is meant to be paired against long FOX.",
+    "source": "manual_thesis_direction_review_packet_015"
+  },
+  "d01a7238-4284-4f38-87f0-2a5be95281e2": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "security_instrument_mismatch",
+    "reason": "Dataset row is mapped to Sally Beauty common equity, but the thesis recommends purchasing Sally Beauty senior subordinated notes due 2016.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "d7a11bea-51a6-41f8-ac3c-172ee3df08c2": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TEN/Tsakos Energy Navigation, but the thesis text is about Tenneco.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "dde1681c-e490-4f47-a751-fcdbeb5f05b7": {
+    "flagged_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to OCA/Omnichannel Acquisition Corp, but the thesis text is about Orthodontic Centers of America, the historical OCA company.",
+    "source": "manual_thesis_direction_review_packet_011"
+  },
+  "df1494b9-7561-4d2f-a4f7-431c0b8f4b9a": {
+    "flagged_at_utc": "2026-06-12T16:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to ENX/Eaton Vance New York MBF, but the thesis text is about Euronext.",
+    "source": "manual_thesis_direction_review_packet_006"
+  },
+  "e0f236d6-f605-4ed3-83de-7f9cede14472": {
+    "flagged_at_utc": "2026-06-12T14:00:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to EPR/EPR Properties, but the thesis text is about Europris (EPR NO Equity).",
+    "source": "manual_thesis_direction_review_packet_004"
+  },
+  "e485b26e-b728-4d8a-a455-bdf78553761b": {
+    "flagged_at_utc": "2026-06-12T12:10:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to GNC/GNC Holdings, but the thesis text is about Greencore.",
+    "source": "manual_thesis_direction_review_packet_003"
+  },
+  "eb0d9059-9c6e-412e-9cd0-da43c6c15ffc": {
+    "flagged_at_utc": "2026-06-12T23:14:23+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Donaldson Company, but the thesis text is about Dolphin Capital Investors / DCI asset liquidation.",
+    "source": "manual_thesis_direction_review_packet_021"
+  },
+  "ec1543b2-aabf-439e-93fc-4218d3b42b0f": {
+    "flagged_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row current metadata maps FUN to Six Flags Entertainment Corporation, but the 2019 thesis text is about Cedar Fair, the historical FUN issuer.",
+    "source": "manual_thesis_direction_review_packet_012"
+  },
+  "ed689fd5-881a-44e7-a61b-195f51a7efa6": {
+    "flagged_at_utc": "2026-06-12T22:14:45+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to FLT/Fleetcor Technologies, but the thesis text is about Flight Centre, the Australian travel agency with ticker FLT AU.",
+    "source": "manual_thesis_direction_review_packet_019"
+  },
+  "ef3964a7-d0b4-4253-a626-ed215b255e0c": {
+    "flagged_at_utc": "2026-06-12T15:05:00+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to SSI/Stage Stores, but the thesis text is about SpectraSite Communications, a post-bankruptcy cellular tower company.",
+    "source": "manual_thesis_direction_review_packet_005"
+  },
+  "f07987e9-376e-4592-9c57-7ff957643e7f": {
+    "flagged_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to AGX/Argan, but the thesis text is about Agribrands, the historical AGX animal-feed company.",
+    "source": "manual_thesis_direction_review_packet_011"
+  },
+  "f132b76e-3d24-4d61-beae-a2d728104289": {
+    "flagged_at_utc": "2026-06-12T21:46:47+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to Willis Towers Watson, but the thesis text is about Weight Watchers/WW, the historical WTW ticker and its physical-to-digital transition.",
+    "source": "manual_thesis_direction_review_packet_018"
+  },
+  "f9e8d95e-6464-4c15-9957-b21e5688f02a": {
+    "flagged_at_utc": "2026-06-12T19:30:50+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to CTIX/Cellceutix, but the thesis text is about Cheap Tickets, Inc.",
+    "source": "manual_thesis_direction_review_packet_013"
+  },
+  "fa45731b-44b1-4ed4-a75a-969c85379b0f": {
+    "flagged_at_utc": "2026-06-12T21:20:27+00:00",
+    "issue": "symbol_text_mismatch",
+    "reason": "Dataset row is mapped to TAL Education Group, but the thesis text is about TAL International/container leasing, the historical TAL ticker.",
+    "source": "manual_thesis_direction_review_packet_017"
+  }
+}

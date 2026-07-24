@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIC dataset funnel</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; width: 1280px; height: 720px; overflow: hidden; background: #0d1117; color: #e6edf3; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .frame { height: 100%; padding: 52px 64px; background: radial-gradient(circle at 92% 8%, #183e34 0, #0d1117 34%); }
+  .eyebrow { color: #62d09f; font-size: 17px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  h1 { margin: 12px 0 10px; font-size: 42px; line-height: 1.12; letter-spacing: -.03em; }
+  .sub { color: #9da7b3; font-size: 19px; margin-bottom: 38px; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; align-items: end; }
+  .step { border: 1px solid #303943; border-radius: 18px; padding: 23px 22px; background: rgba(22, 27, 34, .92); position: relative; }
+  .step:not(:last-child)::after { content: "›"; color: #5b6570; font-size: 36px; position: absolute; right: -16px; top: 50%; transform: translateY(-55%); z-index: 2; }
+  .n { font-size: 44px; font-weight: 780; letter-spacing: -.04em; color: #f0f6fc; }
+  .label { margin-top: 8px; color: #c2cad2; font-size: 17px; line-height: 1.35; min-height: 46px; }
+  .bar { height: 8px; margin-top: 22px; border-radius: 99px; background: #27313a; overflow: hidden; }
+  .fill { height: 100%; border-radius: 99px; background: linear-gradient(90deg, #39c987, #8ae1ba); }
+  .note { margin-top: 34px; padding: 17px 20px; border-left: 4px solid #62d09f; background: rgba(31, 111, 83, .15); color: #b9c2ca; font-size: 18px; }
+  .source { position: absolute; right: 64px; bottom: 28px; color: #66717c; font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="eyebrow">Project audit snapshot</div>
+  <h1>From historical outcomes to training-ready examples</h1>
+  <div class="sub">Every filter removes rows that could teach the model the wrong lesson.</div>
+  <div class="steps">
+    <div class="step"><div class="n">13,330</div><div class="label">historical outcome rows examined</div><div class="bar"><div class="fill" style="width:100%"></div></div></div>
+    <div class="step"><div class="n">8,341</div><div class="label">rows joined to usable VIC pitch text</div><div class="bar"><div class="fill" style="width:62.6%"></div></div></div>
+    <div class="step"><div class="n">5,973</div><div class="label">pitches with a three-year target</div><div class="bar"><div class="fill" style="width:44.8%"></div></div></div>
+    <div class="step"><div class="n">5,639</div><div class="label">clean rows with financial context</div><div class="bar"><div class="fill" style="width:42.3%"></div></div></div>
+  </div>
+  <div class="note">A smaller point-in-time dataset is more useful than a larger dataset containing information investors could not have known.</div>
+  <div class="source">dataset_summary.json · FINETUNING_RUNBOOK.md</div>
+</div>
+</body>
+</html>

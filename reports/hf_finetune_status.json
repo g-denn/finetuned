@@ -1,0 +1,36 @@
+{
+  "base_model_accuracy": 0.0,
+  "complete": false,
+  "dataset_expected_files": 13,
+  "dataset_missing_files": [
+    "reports/majority_baseline_metrics.json",
+    "reports/majority_baseline_predictions.jsonl",
+    "reports/text_baseline_metrics.json",
+    "reports/text_baseline_test_predictions.jsonl",
+    "reports/text_baseline_val_predictions.jsonl"
+  ],
+  "dataset_ready": false,
+  "dataset_repo_exists": true,
+  "dataset_repo_id": "Gden/vic-investment-outcomes-sft",
+  "finetuned_accuracy": 0.15,
+  "finetuned_scored": 20,
+  "gate": {
+    "beats_best_comparison": false,
+    "best_comparison": "tfidf_text",
+    "best_comparison_accuracy": 0.3089820359281437,
+    "expected_test_rows": 835,
+    "finetuned_accuracy": 0.15,
+    "finetuned_long_accuracy": 0.0,
+    "finetuned_scored": 20,
+    "finetuned_short_accuracy": 0.375,
+    "full_test_set": false,
+    "pass": false,
+    "training_profile": "free_t4_qwen3_4b"
+  },
+  "model_expected_files": 8,
+  "model_missing_files": [],
+  "model_ready": true,
+  "model_repo_exists": true,
+  "model_repo_id": "Gden/vic-investment-qwen3-4b-lora-private",
+  "profile": "free_t4_qwen3_4b"
+}

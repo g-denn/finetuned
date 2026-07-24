@@ -1,0 +1,656 @@
+{
+  "01c2f0f9-7b48-448f-b09c-fbb0e160542a": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo opens by recommending CWTR as a short and argues the turnaround will fail.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "022e2df3-2e81-4005-8a07-df033461ee14": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The recommendation explicitly says to short FNGN common stock.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "02425766-dadd-41c8-84e5-1574f17fd988": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo recommends a short position in Mohawk equity and long credit protection.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "08dc7d9c-7c4c-4252-ac79-de98993fe7ba": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The author says investors need a good short and recommends shorting Permian Basin Royalty Trust.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "0c2c4a5b-86e3-42ba-a947-f61f94626b53": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Western Union memo argues smartphone adoption will drive negative growth and that Apple-style digital displacement creates a successful short investment setup.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "0e2e9ad9-ac0b-45bd-8afa-3b67deea213c": {
+    "confirmed_at_utc": "2026-06-12T19:56:37+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short/bearish equity thesis. CNSL memo argues the market is missing a likely dividend cut and shows an implied target price about 32% below the current price.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_014_confirmed_exception"
+  },
+  "0ea0b37c-ee4a-46a2-b08b-3e7e3f916084": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Atos memo calls ATO a slow-grinder short and lays out cloud/outsourcing pressure, weak FCF quality, and downside/upside asymmetry for the short.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "113aa2c9-664a-4952-8193-74808d138e1e": {
+    "confirmed_at_utc": "2026-06-12T12:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed the UAL dataset row should remain short. The author says the desired long is DAL and that the portfolio expression is net long DAL against a basket of UAL and AAL.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "13387dde-c718-4d9c-b404-5935529c56b4": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Accenture thesis opens by saying the author likes shorting big-cap names and that Accenture fits that bill.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "14556ae0-911d-4b4a-bf38-e09044713ff7": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Apple memo says the optically cheap valuation masks an opportunity for a successful short investment and values the equity roughly 50% below market.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "158fa356-7957-4478-aee8-22fa1c5e07b5": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo opens with Recommendation: Short Brighthouse Financial.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "1a3496db-6662-40f2-83f1-442954d9a4cf": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Hormel memo is headed HRL - SHORT and argues the company is overearning at an excessive valuation.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "1ddea5d7-8e81-41c6-917d-e155398e2efa": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo recommends shorting Angie's List and argues ANGI trades above IAC's proposed acquisition value due to deal-mechanism, float, and short-interest dislocation.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "22fa1ba5-f7d6-4012-8d9a-0d4790e45eb6": {
+    "confirmed_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Avis Budget memo says Investment Summary: Short equity and calls Avis a compelling short due to disruption, fleet costs, rates, residual risk, and valuation.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_012_confirmed_exception"
+  },
+  "233f5125-768f-4f17-a644-232f716c4746": {
+    "confirmed_at_utc": "2026-06-12T12:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The thesis states Longfin is a stock promotion and explicitly argues shares are likely to implode.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "26eb19d3-05b5-4878-985e-294be5f93f05": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The write-up opens by calling Western Union a structurally challenged business and a compelling short investment opportunity.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "2ff84040-9fcb-4eb6-a5fb-76a7bd7f129b": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The CDLX thesis opens by saying CDLX is a good short and lays out negative overlooked risks.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "30b46c01-0f2a-4cbe-b76a-0c6f6f95af8c": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Teladoc memo recommends initiating a short position with a price target representing over a 60% return.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "3490b743-045b-471c-9efa-beafcf6d224a": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The summary recommends LZB as a short.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "3b5ccc14-edc7-499a-b891-3fb1025fab89": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The write-up labels Woolworths as a short.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "3e0c13b0-f64d-4be9-9593-d177467afdbf": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short/pair thesis. The memo says Viacom is a good outright short and a compelling short against a long Discovery position.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "3e2f981e-598e-4433-9b8e-703e4a6bc39e": {
+    "confirmed_at_utc": "2026-06-12T15:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The RECN thesis explicitly recommends the short sale of Resources Connection.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "403723bc-4aab-4f69-aa65-f10cd1e85652": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The author explicitly says comScore is a short.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "42d64c6e-9e1c-4af5-880e-3b0df6054946": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo recommends a short position in Comstock Resources, preferably via puts or short calls, paired against a long Marcellus gas producer.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "4522cca2-a881-4f8b-972b-29afdec96f3e": {
+    "confirmed_at_utc": "2026-06-12T12:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The write-up opens 'We believe MYCC is an attractive short.'",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "45af9aea-f854-4785-90de-c799e9c97a5b": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The DFT thesis says shorting DFT at $24 is a compelling opportunity after reassessing the prior long view.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "45d636cf-bfda-42b8-9804-9e2de0ac1152": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The United Rentals memo says URI is a short because rental equipment supply is growing faster than demand while investors ignore supply.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "47115a99-9baa-4105-81a2-9541bcbab3e8": {
+    "confirmed_at_utc": "2026-06-12T19:56:37+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. GHL memo says the leveraged recap presents an entry point to short a business in secular decline.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_014_confirmed_exception"
+  },
+  "49c4c174-a2f6-41e2-af3f-f740b460d345": {
+    "confirmed_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Enbridge memo recommends short ENB CN and ENB US common stock and buying puts, arguing the dividend depends on capital markets funding.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_012_confirmed_exception"
+  },
+  "4a4502d2-1d81-45e5-b00d-86e5f5d9466c": {
+    "confirmed_at_utc": "2026-06-12T19:56:37+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. WPX memo opens with ?WPX is a short? and argues debt, production stagnation, and negative cash generation create downside.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_014_confirmed_exception"
+  },
+  "4bec9616-3faf-4a4c-a639-00ea2e5cd8b2": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo recommends using the blockchain-induced rally to short Kodak shares.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "4eb6f187-93af-4c2a-9279-108cd2a9bcaf": {
+    "confirmed_at_utc": "2026-06-12T12:25:00+00:00",
+    "is_short": false,
+    "reason": "Manual thesis review confirmed the underlying JPM row should remain long. The strategy is a covered call: buy JPM common and sell call options, not a bearish short on JPM stock.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "4fd960c9-64eb-439e-941a-1fe0f4c5b4ba": {
+    "confirmed_at_utc": "2026-06-12T19:30:50+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. Memo opens that NYT is a good short from a timing standpoint and expects negative newspaper trends to re-emerge with 30-40% downside.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_013_confirmed_exception"
+  },
+  "52369e1d-e777-40e1-bf8e-8880e59e66b7": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo recommends the short sale of Polycom.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "524797da-ec6f-4237-85dd-30fbfbbeb73a": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a bearish/short thesis. The Goodyear memo argues margins are unsustainable, supply growth will outpace demand, estimates will be cut, and target value is 40%-50% below market.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "559ead93-a6ef-4ca2-8ce0-d7ec5fb6a883": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Norwegian Cruise Line memo opens that NCLH is a short and says the best risk/reward is to short it against CCL.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "57322ef1-00b5-4759-9981-c2a71dedbd5f": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The KSS thesis labels the position Short/KSS and says the stock provides a good opportunity to short.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "576e04fe-c01b-459c-8458-800149186359": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The write-up says Shake Shack presents a compelling short opportunity and lays out a bearish thesis.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "581bec86-a498-4b05-81f9-0bc5a475449c": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The TNH thesis argues normalized earnings are far below current levels, values shares well below the market price, and notes shares are available to borrow.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "5da150c6-3c8b-4876-b513-451a66eae7b8": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short/pair thesis for the row security. The Blockbuster memo recommends Short 1 BBI and Long 1 BBI-B, with expected value from BBI going to zero or the share-class spread closing.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "645db93c-8678-4f40-83e1-32e8e0f9af8a": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo says dental distributors are an attractive short and that the theme can be played by shorting HSIC or PDCO.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "654d152f-0bb1-4437-83e6-902e53664091": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Coca-Cola Consolidated memo explicitly calls it a short position and presents a bearish sugar/health and management thesis.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "67c90076-b648-4ce3-a832-70ae8bde2892": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Fresh Market memo labels Advocate: Short and argues TFM is an overvalued food retailer with vulnerable margins and competition risk.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "6b3026da-3678-46e9-a52b-012b18f4cfaf": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Icahn Enterprises memo says it is a favored short because IEP trades at a large premium to NAV while peers trade at discounts.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "703ecb86-b09b-45c9-9964-9c88602f7825": {
+    "confirmed_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a bearish/short thesis. The USPH memo argues organic growth is low, economics are deteriorating, accounting/minority put liabilities are problematic, and valuation discounts too much future M&A.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_012_confirmed_exception"
+  },
+  "70b75da7-9651-4ffc-98c7-f7f381b59e6f": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo labels BLDP a short sale recommendation and critiques PEM fuel-cell economics.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "7367e57d-5b5f-4960-bfbf-b23f48713062": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Cisco memo says CSCO is a compelling structural short as its core markets mature and commoditize.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "78d39864-a36d-4a33-a066-8ba388fbab32": {
+    "confirmed_at_utc": "2026-06-12T19:56:37+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. BECN memo argues Beacon is an overvalued roll-up at peak margins and explicitly says it is time to short.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_014_confirmed_exception"
+  },
+  "7b3e730a-886c-4764-8375-f8944a4f48f8": {
+    "confirmed_at_utc": "2026-06-12T19:56:37+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. HZO memo describes the MarineMax short story, bloated inventory, negative free cash flow, and likely earnings miss.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_014_confirmed_exception"
+  },
+  "7c9d79df-8566-4af1-8c1d-99805a66ba7a": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo is headed Short: Twitter and argues the stock is overvalued due to stalled growth.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "86e67a32-1440-4843-b123-573dc99d4573": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a bearish/short pitch. The NNN memo recommends a properly hedged bearish position in the stock.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "891a825f-4452-4584-a616-f7ee0544649b": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Great Canadian Gaming thesis recommends initiating a short position on GC.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "8e21a08e-4f5b-4ad2-b692-458759836357": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Spirit AeroSystems thesis explicitly recommends selling/shorting SPR.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "8f4ca919-84f8-4eee-9e22-f0af167c142e": {
+    "confirmed_at_utc": "2026-06-12T15:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Zynga thesis is bearish, says the stock should fall toward fair value, and discloses that the author is short Zynga.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "8fd1811f-4d41-482d-9299-1bc049b08fdc": {
+    "confirmed_at_utc": "2026-06-12T12:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The executive summary recommends a short position in Select Comfort.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "9013631b-6397-4414-9f1b-3e88ce11771f": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Sirius XM memo is headed SHORT and gives a 24-month target price well below market.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "920f3c09-83e8-4d49-b8e4-f9bcac14fb51": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo opens that Avis Budget Group is a short and argues normalized value is 40%-50% below the current price.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "9d886a24-80c5-4d8f-a0ca-a9ff9b122968": {
+    "confirmed_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The ERII memo says the stock sets up attractively as a short position and lays out multiple SHORT POINT sections.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_012_confirmed_exception"
+  },
+  "9d99cb91-6d30-44e3-b2fc-3c5d29152266": {
+    "confirmed_at_utc": "2026-06-12T11:45:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The intro says the prior long write-up is why the author has been short WAB and labels the attachment 'Wabtec (WAB) - Short'.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "a058bf0c-b34c-4750-ad1d-407acecdaa8a": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Masco memo recommends a short position in MAS equity with near-term return potential from residential/remodeling exposure.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "a17bcb8a-1ae6-48fa-aa7f-7be642728698": {
+    "confirmed_at_utc": "2026-06-12T19:30:50+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. Memo says the analysis is why Craft Brew Alliance is a short, based on competitive dynamics, weak barriers, market maturity, and brand positioning.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_013_confirmed_exception"
+  },
+  "a1dbc2b2-fa3d-4dc7-9435-76f232d19836": {
+    "confirmed_at_utc": "2026-06-12T19:56:37+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. WDR memo says the DOL rule and passive shift create an attractive opportunity to execute this short and frames Waddell & Reed as facing an existential threat.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_014_confirmed_exception"
+  },
+  "a249664f-e756-402f-bb88-d780a49c225e": {
+    "confirmed_at_utc": "2026-06-12T15:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The CNSL thesis says the stock is a short at $12.85 and estimates substantial downside to the common stock.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "a36f5804-6824-4f02-9598-4fc0a2d245ce": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo recommends taking a short position in Parlux Fragrances.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "a66cc193-f298-423c-8f90-31e50573d549": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Cross Country Healthcare memo calls CCRN the next COVID over-earner and says it should make a great short opportunity.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "a78330af-0dc0-49d8-8322-54b21bedfcee": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The NiSource memo opens that NI presents a solid alpha-generating short opportunity and values shares about 30% lower.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "aee0107f-48a1-4f67-8d44-2475927e5527": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a bearish/short thesis. The Dycom memo argues the company is at peak margins after a stock-price doubling, with no free cash flow and commodity-service economics.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "af928b2e-a117-4553-9463-906db344b85e": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo opens Short America?s Car-Mart, CRMT and argues credit losses and operating deterioration will worsen.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "b04c024f-a7cc-4a52-ab37-a48b1d808fdb": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Shopify memo opens that SHOP is a short with roughly 50% downside to the price target.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "b16b1538-4103-46a1-ae1d-5828efa8dca4": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo is headed J&J Snack Foods - Short and describes shorting JJSF as compelling.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "b35fb319-9c21-4640-a7f5-08ed7b5cd818": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Hyatt memo recommends a short position in Hyatt shares and values the stock materially below market.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "b37336b2-ccea-4a7b-bb69-fc9b35e71ce4": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a bearish/short thesis. The IMAX memo says bulls ignore weak economics and estimates 50% downside to the current price.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "b5f0898b-f1ab-40f1-83ed-6cb7f901b904": {
+    "confirmed_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The XPO memo lists bear points and reasons to short, arguing XPO's LTL business does not deserve ODFL-like valuation after the spin.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_012_confirmed_exception"
+  },
+  "b66a6205-d21e-4825-bb25-65f447b9a0d6": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The SBAC thesis explicitly recommends shorting SBA Communications.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "b7c007d0-3306-4ed2-b856-d0c290126079": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a bearish/short thesis. The Tableau memo says fundamentals failed to justify the stock-price recovery, highlights weak growth, competition, valuation, and profitability issues, and lists negative catalysts.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "b95db0c7-c063-492b-a634-d684bd4b0979": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo says Recommendation: Short NRP and argues the dividend is unsustainable due to coal prices, costs, reserves, and regulation.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "bb8eb975-1800-4db7-b310-09401ffa1688": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The McCormick memo opens Short MKC and explicitly recommends shorting McCormick.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "bcad3212-a440-4728-a480-77b8aa3af84b": {
+    "confirmed_at_utc": "2026-06-12T19:56:37+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short. MRNA memo says investors are compensated for holding a short position and estimates 55-68% downside to fair value.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_014_confirmed_exception"
+  },
+  "bd7745a0-aa37-4aab-aeeb-7717d050fbd6": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo explicitly says Red Robin Gourmet Burgers is a short.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "bd9f1080-52ba-4a21-9605-9e6491e5a156": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Trade Desk memo opens Short The Trade Desk and argues the ad-tech platform is a commodity whose position will erode.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "be3754ee-1951-434d-a1cd-1bf7f106f800": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short/common-equity leg. The Weight Watchers memo recommends going short the common equity and long the first-lien term loan.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "bf5c03bd-4e37-4b3b-9fb8-17493d4cc559": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The thesis explicitly recommends Digital Realty as a short.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "c047e565-ddb3-4c88-8efa-e9c261cf9f77": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Arrow Global thesis says the business model is deteriorating, accounting is suspicious, and the company has little to no equity value.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "c392189b-4663-482d-995e-9e37ce269942": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo says Lakeland Industries is a good short candidate.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "c4479fa5-a0c6-4dcb-bd81-ac75dc1e07fd": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Avery Dennison memo calls AVY a slow destruction short and presents a bearish valuation case.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "c4b8e1e4-65c4-4af9-96ee-7d515a03761c": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short/bearish options thesis. The Tilray memo recommends selling call spreads and buying puts, and says a long-convert/short-common capital-structure trade also makes sense.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "cc199757-1276-46eb-9363-ed6398e70506": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo opens by recommending a short in Hubbell.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "d260fb79-2f63-4acb-a027-e46f7e31a90a": {
+    "confirmed_at_utc": "2026-06-12T12:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The write-up opens with 'We think WGO is an attractive short here' and presents a bearish RV macro thesis.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "d4ffad43-0a78-40bf-8acb-451741a327f9": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Ollie's thesis is bearish on moat, expectations, valuation, and fair value downside.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "d540ab22-e723-4a11-9f2c-598d1276124b": {
+    "confirmed_at_utc": "2026-06-12T16:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The BFAM thesis argues the market has it wrong, estimates large downside to EPS and stock price, and notes GC borrow.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "d630dc56-73bd-443b-8dc6-e833563d4c39": {
+    "confirmed_at_utc": "2026-06-12T15:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The SGMS thesis says the author holds a short position, calls SGMS a compelling short opportunity, and targets zero for the equity.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "d8fb531d-2222-4e12-863d-051c3bb69d1d": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo says ARRY is a compelling short and proposes a long FLEX / short ARRY pair trade.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "d968808f-7857-4ce5-bb53-7d4b15f3ddd8": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The write-up says the stock is up roughly fivefold and now presents a compelling short.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "dde1681c-e490-4f47-a751-fcdbeb5f05b7": {
+    "confirmed_at_utc": "2026-06-12T18:38:45.069279+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The OCA memo recommends taking a short position in Orthodontic Centers of America and alleges suspect operating/financial results.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_011_confirmed_exception"
+  },
+  "e2775a3c-df57-4cc1-9562-627c4b3384ff": {
+    "confirmed_at_utc": "2026-06-12T15:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Hershey thesis says HSY is an attractive absolute and relative short.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "e2b4f064-a091-409e-98d1-57404035c5c1": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo recommends short Avon Products common stock and argues a broken business model is misvalued versus peers.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "e70309c0-32b7-47a5-8086-b181c917a488": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo starts Idea: Short Fiesta Restaurant Group and argues Pollo Tropical expansion outside Florida will fail.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "e7084a84-0f39-4d80-ae6f-8f58ab59510e": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Pulse Biosciences memo discusses risks to being short and argues sales will disappoint after approval.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "e87095c2-9c76-47e6-b04a-3917bebba72c": {
+    "confirmed_at_utc": "2026-06-12T18:12:39.221356+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo says Zion Oil and Gas is an opportunity to short a blatant scam with an imminent catalyst and direct-investment arbitrage setup.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_010_confirmed_exception"
+  },
+  "ec1543b2-aabf-439e-93fc-4218d3b42b0f": {
+    "confirmed_at_utc": "2026-06-12T19:03:08.024303+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Cedar Fair memo opens that the author is recommending FUN as a short and expects a distribution cut to drive the stock toward the low $30s.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_012_confirmed_exception"
+  },
+  "ed177caf-f356-4247-b3e4-5162db766df0": {
+    "confirmed_at_utc": "2026-06-12T14:00:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The write-up labels the idea as short Cedar Fair Entertainment and presents a bearish thesis.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "f1826659-71d9-4445-a272-d90718560623": {
+    "confirmed_at_utc": "2026-06-12T12:05:00+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The executive summary recommends a short position in KEYW with a negative expected return.",
+    "source": "manual_thesis_direction_review_confirmed_exception"
+  },
+  "f46b95fd-1422-4658-aab5-88ddc6e51e4a": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Signet memo asks why short now and values the stock far below the market price.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "f4d21f77-65e4-4922-ac2b-f3df0683df21": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The Avis Budget memo recommends shorting CAR and gives an initial target price well below market.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "f4e5bf2c-1fad-4b2e-9fd4-8da491e7e240": {
+    "confirmed_at_utc": "2026-06-12T16:34:51+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The memo explicitly recommends a short of Casella Waste.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_007_confirmed_exception"
+  },
+  "f893c50d-2f16-4841-82e2-795d1b012c08": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The DiamondRock Hospitality memo calls DRH a compelling short due to overstated FFO/EBITDA and valuation on true earnings.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "f8b2312f-3e03-4747-b3e3-4772f05a7baa": {
+    "confirmed_at_utc": "2026-06-12T17:21:12+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a genuine short pitch. The summary recommends taking a short position in Juniper Networks.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_008_confirmed_exception"
+  },
+  "f908a4e6-8a67-4ec5-9405-850bca40f06d": {
+    "confirmed_at_utc": "2026-06-12T17:44:36+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed this is a bearish/short thesis on PAA. The memo is bearish on midstream MLPs, focuses on Plains All American, and estimates severe downside/no equity value under peer multiples.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_009_confirmed_exception"
+  },
+  "f991cd63-0ac7-4eca-93c8-4a4869427b96": {
+    "confirmed_at_utc": "2026-06-12T19:30:50+00:00",
+    "is_short": true,
+    "reason": "Manual thesis review confirmed genuine short/options thesis. Memo begins Short: Groupon, expects a larger revenue slowdown from declining deal quality, and recommends Jan 2013 $10 puts.",
+    "source": "manual_thesis_direction_review_2026_06_13_packet_013_confirmed_exception"
+  }
+}

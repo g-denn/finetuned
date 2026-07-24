@@ -15,8 +15,8 @@
     ]
   },
   "direction_counts": {
-    "long": 3655,
-    "short": 4686
+    "long": 6187,
+    "short": 2154
   },
   "horizon_nonmissing_counts": {
     "10y": 2315,
@@ -28,11 +28,11 @@
   "missing_description_before_filter": 12,
   "missing_idea_meta": 0,
   "primary_outcome_counts": {
-    "excellent": 845,
-    "failed": 1121,
-    "good": 1651,
-    "neutral": 2475,
-    "poor": 2249
+    "excellent": 823,
+    "failed": 1097,
+    "good": 2044,
+    "neutral": 2630,
+    "poor": 1747
   },
   "raw_training_rows": 8353,
   "sft_rows_with_3y_target": 5973,
